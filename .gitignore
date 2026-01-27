@@ -1,0 +1,32 @@
+# System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment Files
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Build Files (if using build tools later)
+dist/
+build/
+.cache/
+
+# Dependencies (if adding npm later)
+node_modules/
+
+# Temporary Files
+*.tmp
+*.temp
