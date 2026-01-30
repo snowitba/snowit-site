@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - SnowIt | Case Studies & Project Examples</title>
+    <meta name="description" content="See our proven work: LumisCare (HIPAA healthcare platform), fintech payment systems, and enterprise modernization projects.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .portfolio-hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+            border-bottom: 1px solid rgba(100, 200, 255, 0.1);
+        }
+
+        .portfolio-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #64C8FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .portfolio-hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin-bottom: 0;
+        }
+
+        .case-studies {
+            padding: 80px 0;
+        }
+
+        .case-study {
+            margin-bottom: 120px;
+            scroll-margin-top: 100px;
+        }
+
+        .case-study:last-child {
+            margin-bottom: 0;
+        }
+
+        .case-study-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .case-study:nth-child(even) .case-study-header {
+            grid-template-columns: 1fr 1fr;
+            direction: rtl;
+        }
+
+        .case-study:nth-child(even) .case-study-header > div {
+            direction: ltr;
+        }
+
+        .case-study-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .case-study-subtitle {
+            font-size: 1.1rem;
+            color: #64C8FF;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .case-study-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .case-study-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 2rem;
+            padding: 30px;
+            background: rgba(100, 200, 255, 0.05);
+            border-left: 3px solid #64C8FF;
+            border-radius: 8px;
+        }
+
+        .stat-item h4 {
+            color: #64C8FF;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-item p {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .tech-stack {
+            margin-bottom: 2rem;
+        }
+
+        .tech-stack-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(100, 200, 255, 0.1);
+            border: 1px solid rgba(100, 200, 255, 0.3);
+            color: #64C8FF;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .case-study-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .case-study-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .case-study-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(100, 200, 255, 0.1) 0%, rgba(100, 200, 255, 0.05) 100%);
+            pointer-events: none;
+        }
+
+        .case-study-features {
+            padding: 40px;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(100, 200, 255, 0.1);
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .case-study-features h4 {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+
+        .feature-item::before {
+            content: "✓";
+            color: #64C8FF;
+            font-weight: bold;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+
+        .portfolio-cta {
+            margin-top: 100px;
+            padding: 60px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(100, 200, 255, 0.05) 0%, rgba(100, 200, 255, 0.02) 100%);
+            border: 1px solid rgba(100, 200, 255, 0.1);
+            border-radius: 12px;
+        }
+
+        .portfolio-cta h3 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-cta p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .case-study-header {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .case-study:nth-child(even) .case-study-header {
+                direction: ltr;
+            }
+
+            .case-study-header > div {
+                direction: ltr;
+            }
+
+            .case-study-info h2 {
+                font-size: 2rem;
+            }
+
+            .case-study-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-text">Snow<span class="logo-accent">It</span></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-active">Portfolio</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="index.html#contact" class="btn-nav">Get Started</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <h1>Our Work</h1>
+            <p>See how we've transformed operations for healthcare institutions, transportation systems, and enterprise clients. Real solutions, real results.</p>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies">
+        <div class="container">
+            <!-- LumisCare -->
+            <div class="case-study" id="lumiscare">
+                <div class="case-study-header">
+                    <div class="case-study-info">
+                        <div class="case-study-subtitle">Healthcare Technology</div>
+                        <h2>LumisCare</h2>
+                        <p class="case-study-description">
+                            An AI-assisted home healthcare platform helping US agencies reduce paperwork by 70% while improving clinical decision-making. HIPAA-compliant, fully operational, handling real patient data across 15+ agencies.
+                        </p>
+
+                        <div class="case-study-stats">
+                            <div class="stat-item">
+                                <h4>Documentation Time Reduction</h4>
+                                <p>70%</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>Active Agencies</h4>
+                                <p>15+</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>HIPAA Compliance</h4>
+                                <p>100%</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>System Uptime</h4>
+                                <p>99.95%</p>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <div class="tech-stack-label">Technology Stack</div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">React 18</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">Vapi AI</span>
+                                <span class="tech-tag">HL7 FHIR</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-study-image">
+                        <img src="https://images.unsplash.com/photo-1576091160550-112173f7f477?w=500" alt="LumisCare healthcare dashboard">
+                        <div class="case-study-image-overlay"></div>
+                    </div>
+                </div>
+
+                <div class="case-study-features">
+                    <h4>Key Features & Capabilities</h4>
+                    <div class="features-list">
+                        <div class="feature-item">Real-time video + audio during home visits</div>
+                        <div class="feature-item">AI-assisted OASIS assessment completion</div>
+                        <div class="feature-item">Clinical risk warning system</div>
+                        <div class="feature-item">Caregiver scheduling & routing</div>
+                        <div class="feature-item">Visit tracking & documentation</div>
+                        <div class="feature-item">HIPAA-compliant data architecture</div>
+                        <div class="feature-item">EHR integration (HL7 FHIR)</div>
+                        <div class="feature-item">Multi-state compliance automation</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Platform -->
+            <div class="case-study" id="payment-app">
+                <div class="case-study-header">
+                    <div class="case-study-info">
+                        <div class="case-study-subtitle">Fintech & Payments</div>
+                        <h2>Payment Platform</h2>
+                        <p class="case-study-description">
+                            A modern payment system for Bosnia and the region, enabling digital payments in a cash-dependent economy. BLIK-style design, PSD2-compliant, bank consortium architecture. Launching Q1 2026.
+                        </p>
+
+                        <div class="case-study-stats">
+                            <div class="stat-item">
+                                <h4>Transaction Volume (Target)</h4>
+                                <p>1M+/month</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>PCI-DSS Compliance</h4>
+                                <p>Level 1</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>Supported Banks</h4>
+                                <p>8+</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>Countries</h4>
+                                <p>3+</p>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <div class="tech-stack-label">Technology Stack</div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">PCI-DSS</span>
+                                <span class="tech-tag">BLIK Protocol</span>
+                                <span class="tech-tag">AWS Infrastructure</span>
+                                <span class="tech-tag">Bank APIs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-study-image">
+                        <img src="https://images.unsplash.com/photo-1563013544-824b1adfsad1?w=500" alt="Payment platform mobile app">
+                        <div class="case-study-image-overlay"></div>
+                    </div>
+                </div>
+
+                <div class="case-study-features">
+                    <h4>Core Features</h4>
+                    <div class="features-list">
+                        <div class="feature-item">Mobile-first payment interface</div>
+                        <div class="feature-item">Direct bank integration (BLIK)</div>
+                        <div class="feature-item">QR code payment generation</div>
+                        <div class="feature-item">Transaction history & analytics</div>
+                        <div class="feature-item">PCI-DSS Level 1 compliance</div>
+                        <div class="feature-item">Real-time settlement</div>
+                        <div class="feature-item">Fraud detection system</div>
+                        <div class="feature-item">Multi-country support</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enterprise Modernization -->
+            <div class="case-study" id="enterprise-modernization">
+                <div class="case-study-header">
+                    <div class="case-study-info">
+                        <div class="case-study-subtitle">Enterprise Software</div>
+                        <h2>Legacy System Modernization</h2>
+                        <p class="case-study-description">
+                            Transformation of a legacy enterprise system into a modern, cloud-native architecture. Data migration from 20-year-old monolith to microservices. Zero downtime migration, 100% data integrity maintained.
+                        </p>
+
+                        <div class="case-study-stats">
+                            <div class="stat-item">
+                                <h4>Data Migrated</h4>
+                                <p>2.3TB</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>Downtime</h4>
+                                <p>0 hours</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>Performance Improvement</h4>
+                                <p>340%</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>Cost Reduction</h4>
+                                <p>45%</p>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <div class="tech-stack-label">Technology Stack</div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Kubernetes</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">AWS ECS</span>
+                                <span class="tech-tag">Terraform</span>
+                                <span class="tech-tag">Data Pipeline</span>
+                                <span class="tech-tag">Load Balancing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-study-image">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500" alt="Enterprise infrastructure">
+                        <div class="case-study-image-overlay"></div>
+                    </div>
+                </div>
+
+                <div class="case-study-features">
+                    <h4>Project Outcomes</h4>
+                    <div class="features-list">
+                        <div class="feature-item">Containerized microservices architecture</div>
+                        <div class="feature-item">Kubernetes orchestration at scale</div>
+                        <div class="feature-item">Automated deployment pipeline (CI/CD)</div>
+                        <div class="feature-item">Database migration (zero downtime)</div>
+                        <div class="feature-item">Infrastructure as Code (Terraform)</div>
+                        <div class="feature-item">Observability & monitoring stack</div>
+                        <div class="feature-item">Disaster recovery & backup systems</div>
+                        <div class="feature-item">Team training & knowledge transfer</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="portfolio-cta">
+                <h3>Ready to Transform Your Operations?</h3>
+                <p>Let's discuss how SnowIt can help you achieve similar results. Schedule a free consultation with our team.</p>
+                <a href="index.html#contact" class="btn btn-primary btn-glow">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-text">Snow<span class="logo-accent">It</span></span>
+                    </div>
+                    <p class="footer-tagline">
+                        Technology solutions that move industries forward.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="index.html#services">Healthcare IT</a></li>
+                            <li><a href="index.html#services">Transportation Systems</a></li>
+                            <li><a href="index.html#services">Enterprise Infrastructure</a></li>
+                            <li><a href="index.html#services">Future-Ready Solutions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SnowIt. All rights reserved.</p>
+                <p class="footer-credit">Led by Asmir Merdžanović</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

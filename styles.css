@@ -192,6 +192,10 @@ section {
     color: var(--blue);
 }
 
+.nav-active {
+    color: var(--blue) !important;
+}
+
 .btn-nav {
     background: linear-gradient(135deg, var(--blue), var(--blue-light));
     padding: var(--spacing-xs) var(--spacing-md);
