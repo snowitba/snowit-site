@@ -416,7 +416,7 @@ images.forEach(img => imageObserver.observe(img));
 // ====================
 
 console.log(
-    '%c🔷 SnowIt - Technology Solutions That Move Industries Forward',
+    '%c🔷 SnowIT - Technology Solutions That Move Industries Forward',
     'color: #2E86DE; font-size: 18px; font-weight: bold; padding: 10px;'
 );
 console.log(

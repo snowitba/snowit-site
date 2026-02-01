@@ -1,10 +1,10 @@
-# SnowIt Landing Page
+# SnowIT Landing Page
 
-Professional sales-focused landing page for SnowIt (snowit.ba) - A technology company specializing in enterprise IT solutions.
+Professional sales-focused landing page for SnowIT (snowit.ba) - A technology company specializing in enterprise IT solutions.
 
 ## Overview
 
-SnowIt is a technology company based in Bosnia and Herzegovina, headed by Asmir Merdžanović. They are a serious enterprise IT partner delivering solutions for healthcare, transportation, and critical infrastructure.
+SnowIT is a technology company based in Bosnia and Herzegovina, headed by Asmir Merdžanović. They are a serious enterprise IT partner delivering solutions for healthcare, transportation, and critical infrastructure.
 
 ## Features
 
@@ -24,7 +24,7 @@ SnowIt is a technology company based in Bosnia and Herzegovina, headed by Asmir 
    - Transportation & Railway Systems
    - Enterprise Infrastructure
    - Future-Ready Solutions
-4. **Why SnowIt** - 6 competitive advantages
+4. **Why SnowIT** - 6 competitive advantages
 5. **Contact** - Lead capture form with company details
 6. **Footer** - Navigation and credits
 
@@ -207,7 +207,7 @@ Create and add to `<head>`:
 
 For better social media sharing:
 ```html
-<meta property="og:title" content="SnowIt - Technology Solutions That Move Industries Forward">
+<meta property="og:title" content="SnowIT - Technology Solutions That Move Industries Forward">
 <meta property="og:description" content="Enterprise-grade IT solutions for healthcare, transportation, and critical infrastructure.">
 <meta property="og:image" content="https://snowit.ba/og-image.jpg">
 <meta property="og:url" content="https://snowit.ba">
@@ -238,7 +238,7 @@ Built by **John Eriksen** at **Basic AS**
 
 ## License
 
-Proprietary - © 2024 SnowIt. All rights reserved.
+Proprietary - © 2024 SnowIT. All rights reserved.
 
 ---
 

@@ -1,6 +1,6 @@
-# SnowIt Deployment Guide
+# SnowIT Deployment Guide
 
-Quick deployment guide for the SnowIt landing page.
+Quick deployment guide for the SnowIT landing page.
 
 ## Pre-Deployment Checklist
 
@@ -71,7 +71,7 @@ vercel domains add snowit.ba
 # Create repository
 git init
 git add .
-git commit -m "Initial commit - SnowIt landing page"
+git commit -m "Initial commit - SnowIT landing page"
 git branch -M main
 git remote add origin https://github.com/yourusername/snowit-site.git
 git push -u origin main
@@ -294,7 +294,7 @@ Configure `info@snowit.ba`:
 - Email: john@basicconsulting.no
 - Website: basicconsulting.no
 
-**Client:** SnowIt
+**Client:** SnowIT
 - Email: info@snowit.ba
 - Contact: Asmir Merdžanović
 

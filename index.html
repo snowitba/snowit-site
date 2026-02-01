@@ -579,6 +579,345 @@
                 padding: 4rem 1.5rem;
             }
         }
+
+        /* About Section */
+        .about {
+            padding: 6rem 4rem;
+            background: var(--color-navy-deep);
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-cyan);
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .about-header h2 {
+            font-family: var(--font-primary);
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--color-text-primary);
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text {
+            color: var(--color-text-secondary);
+            font-size: 1.0625rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text strong {
+            color: var(--color-text-primary);
+        }
+
+        .about-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .about-list li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-text-secondary);
+        }
+
+        .about-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 8px;
+            height: 8px;
+            background: var(--color-orange);
+            border-radius: 50%;
+        }
+
+        .about-stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .stat-box {
+            background: var(--color-navy-light);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .stat-box:hover {
+            border-color: var(--color-orange);
+            transform: translateY(-4px);
+        }
+
+        .stat-value {
+            font-family: var(--font-mono);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-orange);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-muted);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 4rem;
+            background: var(--color-navy);
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-family: var(--font-primary);
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-description {
+            color: var(--color-text-secondary);
+            font-size: 1.125rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--color-text-secondary);
+        }
+
+        .contact-item svg {
+            color: var(--color-cyan);
+        }
+
+        .contact-item a {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--color-orange);
+        }
+
+        .contact-cta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-cta .btn-primary,
+        .contact-cta .btn-ghost {
+            padding: 1rem 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-family: var(--font-primary);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.15s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .contact-cta .btn-primary {
+            background: var(--color-orange);
+            color: var(--color-navy);
+            border: 2px solid var(--color-orange);
+        }
+
+        .contact-cta .btn-primary:hover {
+            background: transparent;
+            color: var(--color-orange);
+            box-shadow: 0 0 30px var(--color-orange-glow);
+        }
+
+        .contact-cta .btn-ghost {
+            background: transparent;
+            color: var(--color-text-primary);
+            border: 2px solid var(--color-border);
+        }
+
+        .contact-cta .btn-ghost:hover {
+            border-color: var(--color-cyan);
+            color: var(--color-cyan);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 4rem;
+            background: var(--color-navy-deep);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 1rem;
+            display: inline-flex;
+        }
+
+        .footer-tagline {
+            color: var(--color-text-muted);
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            max-width: 350px;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-primary);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--color-orange);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        .footer-credit {
+            font-style: italic;
+        }
+
+        @media (max-width: 1024px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about,
+            .contact,
+            .footer {
+                padding: 4rem 1.5rem;
+            }
+
+            .about-stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-details {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -591,12 +930,12 @@
             Snow<span>IT</span>
         </a>
         <ul class="nav-links">
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#features">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="mailto:info@snowit.ba">Contact</a></li>
         </ul>
-        <button class="nav-cta">Get Quote</button>
+        <a href="mailto:info@snowit.ba" class="nav-cta">Get Quote</a>
     </nav>
 
     <section class="hero">
@@ -606,13 +945,13 @@
             <p class="hero-subtitle">Healthcare-grade reliability. Modern engineering. Global standards. We build systems that scale.</p>
 
             <div class="hero-cta-group">
-                <a href="#" class="btn-primary">
+                <a href="mailto:info@snowit.ba" class="btn-primary">
                     Start Project
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                 </a>
-                <a href="#" class="btn-ghost">View Work</a>
+                <a href="portfolio.html" class="btn-ghost">View Work</a>
             </div>
         </div>
 
@@ -699,5 +1038,112 @@
             </div>
         </div>
     </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-header">
+            <span class="section-label">About SnowIT</span>
+            <h2>Enterprise IT from the Balkans</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>SnowIT is a software development company based in Sarajevo, Bosnia and Herzegovina, specializing in healthcare technology and enterprise software for US and EU markets.</p>
+                <p><strong>What makes us unique:</strong></p>
+                <ul class="about-list">
+                    <li>Healthcare specialization with HIPAA expertise (LumisCare proven)</li>
+                    <li>AI-augmented development for faster delivery</li>
+                    <li>50% of profits donated to charity</li>
+                    <li>European-quality engineering at competitive rates</li>
+                </ul>
+            </div>
+            <div class="about-stats-grid">
+                <div class="stat-box">
+                    <span class="stat-value">10+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value">50+</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value">99.9%</span>
+                    <span class="stat-label">Uptime SLA</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value">50%</span>
+                    <span class="stat-label">Profits to Charity</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <span class="section-label">Get in Touch</span>
+            <h2>Let's Build Something Great</h2>
+            <p class="contact-description">Ready to start your next project? Contact us for a free consultation.</p>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <a href="mailto:info@snowit.ba">info@snowit.ba</a>
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="24" height="24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span>Sarajevo, Bosnia and Herzegovina</span>
+                </div>
+            </div>
+            <div class="contact-cta">
+                <a href="mailto:info@snowit.ba" class="btn-primary">
+                    Contact Us
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+                <a href="careers.html" class="btn-ghost">Join Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-mark">S</div>
+                    Snow<span>IT</span>
+                </a>
+                <p class="footer-tagline">Enterprise IT solutions from the Balkans. Healthcare-grade reliability. Modern engineering.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#features">Healthcare Systems</a></li>
+                        <li><a href="#features">Enterprise Integration</a></li>
+                        <li><a href="#features">Cloud Infrastructure</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="mailto:info@snowit.ba">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SnowIT. All rights reserved.</p>
+            <p class="footer-credit">Led by Asmir Merdžanović</p>
+        </div>
+    </footer>
 </body>
 </html>
