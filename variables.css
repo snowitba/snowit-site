@@ -1,0 +1,242 @@
+/*
+ * SnowIT Design System — Bold Enterprise Tech
+ * Philosophy: Modern, premium, tech-forward, memorable
+ */
+
+:root {
+    /* ═══════════════════════════════════════════════════════════
+       COLOR PALETTE — Dark, Bold, Electric
+       ═══════════════════════════════════════════════════════════ */
+
+    /* Navy Backgrounds */
+    --color-navy: #0F172A;            /* Primary background */
+    --color-navy-deep: #0A0F1C;       /* Deeper sections */
+    --color-navy-light: #1E293B;      /* Cards, elevated surfaces */
+    --color-border: #334155;          /* Borders, dividers */
+
+    /* Orange Accent — THE signature color */
+    --color-orange: #FF6B35;          /* Primary accent - FIRE */
+    --color-orange-light: #FF8C5A;    /* Hover state */
+    --color-orange-dark: #E55A2B;     /* Active/pressed */
+    --color-orange-glow: rgba(255, 107, 53, 0.4);
+    --color-orange-subtle: rgba(255, 107, 53, 0.1);
+
+    /* Cyan Secondary */
+    --color-cyan: #00D4FF;            /* Secondary accent - electric */
+    --color-cyan-light: #33DDFF;      /* Hover */
+    --color-cyan-glow: rgba(0, 212, 255, 0.3);
+    --color-cyan-subtle: rgba(0, 212, 255, 0.1);
+
+    /* Text Colors */
+    --color-text-primary: #F8FAFC;    /* Headlines, primary text */
+    --color-text-secondary: #94A3B8;  /* Body text, descriptions */
+    --color-text-muted: #64748B;      /* Captions, labels */
+
+    /* Functional */
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+
+    /* ═══════════════════════════════════════════════════════════
+       TYPOGRAPHY — Bold, Technical, Modern
+       ═══════════════════════════════════════════════════════════ */
+
+    --font-primary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+
+    /* Font Sizes */
+    --text-xs: 0.6875rem;    /* 11px - Micro labels */
+    --text-sm: 0.8125rem;    /* 13px - Small text */
+    --text-base: 0.9375rem;  /* 15px - Body */
+    --text-lg: 1.0625rem;    /* 17px - Lead */
+    --text-xl: 1.25rem;      /* 20px - Subheadings */
+    --text-2xl: 1.5rem;      /* 24px - Card headings */
+    --text-3xl: 2rem;        /* 32px - Section headings */
+    --text-4xl: 2.5rem;      /* 40px - Page headings */
+    --text-5xl: 3.5rem;      /* 56px - Hero */
+    --text-hero: clamp(2.5rem, 5vw, 4rem);
+
+    /* Font Weights — BOLD dominates */
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+
+    /* Line Heights */
+    --leading-none: 1;
+    --leading-tight: 1.1;
+    --leading-snug: 1.3;
+    --leading-normal: 1.6;
+
+    /* Letter Spacing */
+    --tracking-tighter: -0.03em;
+    --tracking-tight: -0.02em;
+    --tracking-normal: 0;
+    --tracking-wide: 0.05em;
+    --tracking-wider: 0.1em;
+
+    /* ═══════════════════════════════════════════════════════════
+       SPACING
+       ═══════════════════════════════════════════════════════════ */
+
+    --space-1: 0.25rem;    /* 4px */
+    --space-2: 0.5rem;     /* 8px */
+    --space-3: 0.75rem;    /* 12px */
+    --space-4: 1rem;       /* 16px */
+    --space-5: 1.5rem;     /* 24px */
+    --space-6: 2rem;       /* 32px */
+    --space-8: 3rem;       /* 48px */
+    --space-10: 4rem;      /* 64px */
+    --space-12: 5rem;      /* 80px */
+    --space-16: 6rem;      /* 96px */
+
+    /* ═══════════════════════════════════════════════════════════
+       BORDERS & RADIUS — Mixed: sharp + subtle
+       ═══════════════════════════════════════════════════════════ */
+
+    --radius-none: 0;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+
+    /* ═══════════════════════════════════════════════════════════
+       SHADOWS — Dramatic, glowing
+       ═══════════════════════════════════════════════════════════ */
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+    /* Glow Effects */
+    --shadow-orange-glow: 0 0 30px var(--color-orange-glow);
+    --shadow-orange-glow-lg: 0 0 60px var(--color-orange-glow);
+    --shadow-cyan-glow: 0 0 30px var(--color-cyan-glow);
+
+    /* ═══════════════════════════════════════════════════════════
+       TRANSITIONS — Snappy, responsive
+       ═══════════════════════════════════════════════════════════ */
+
+    --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-snap: cubic-bezier(0.2, 0, 0, 1);
+
+    --duration-instant: 100ms;
+    --duration-fast: 150ms;
+    --duration-normal: 200ms;
+    --duration-slow: 300ms;
+
+    --transition-fast: all var(--duration-fast) var(--ease-snap);
+    --transition-normal: all var(--duration-normal) var(--ease-default);
+
+    /* ═══════════════════════════════════════════════════════════
+       LAYOUT
+       ═══════════════════════════════════════════════════════════ */
+
+    --container-max: 1200px;
+    --container-narrow: 900px;
+    --container-wide: 1400px;
+
+    /* ═══════════════════════════════════════════════════════════
+       Z-INDEX
+       ═══════════════════════════════════════════════════════════ */
+
+    --z-base: 0;
+    --z-dropdown: 10;
+    --z-sticky: 50;
+    --z-fixed: 100;
+    --z-modal: 200;
+    --z-tooltip: 300;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════ */
+
+.font-primary { font-family: var(--font-primary); }
+.font-mono { font-family: var(--font-mono); }
+
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-muted { color: var(--color-text-muted); }
+.text-orange { color: var(--color-orange); }
+.text-cyan { color: var(--color-cyan); }
+
+.bg-navy { background: var(--color-navy); }
+.bg-navy-deep { background: var(--color-navy-deep); }
+.bg-navy-light { background: var(--color-navy-light); }
+
+.uppercase {
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+}
+
+/* Button styles */
+.btn {
+    font-family: var(--font-primary);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.btn-primary {
+    background: var(--color-orange);
+    color: var(--color-navy);
+    border: 2px solid var(--color-orange);
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--color-orange);
+    box-shadow: var(--shadow-orange-glow);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--color-text-primary);
+    border: 2px solid var(--color-border);
+}
+
+.btn-ghost:hover {
+    border-color: var(--color-cyan);
+    color: var(--color-cyan);
+}
+
+/* Card styles */
+.card {
+    background: var(--color-navy-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-fast);
+}
+
+.card:hover {
+    border-color: var(--color-orange);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Tag/badge styles */
+.tag {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    padding: var(--space-1) var(--space-3);
+    background: var(--color-cyan-subtle);
+    color: var(--color-cyan);
+    border-radius: var(--radius-sm);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+}
+
+/* Glow effects */
+.glow-orange {
+    box-shadow: var(--shadow-orange-glow);
+}
+
+.glow-cyan {
+    box-shadow: var(--shadow-cyan-glow);
+}

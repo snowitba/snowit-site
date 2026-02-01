@@ -3,549 +3,701 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SnowIt - Enterprise Technology Solutions for Mission-Critical Industries</title>
-    <meta name="description" content="Enterprise-grade IT solutions for healthcare, transportation, and critical infrastructure. SnowIt delivers proven, scalable technology that powers industry leaders.">
+    <title>SnowIT — Enterprise IT Solutions from the Balkans</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="variables.css">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--color-navy);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255, 107, 53, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 107, 53, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.25rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: var(--font-primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-mark {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--color-orange), var(--color-cyan));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .logo span {
+            color: var(--color-orange);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-orange);
+            transition: width 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-orange);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            font-family: var(--font-primary);
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            background: var(--color-orange);
+            color: var(--color-navy);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-cta:hover {
+            background: var(--color-orange-light);
+            box-shadow: 0 0 30px var(--color-orange-glow);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 8rem 4rem 4rem;
+            position: relative;
+            gap: 4rem;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-cyan);
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 4px;
+            opacity: 0;
+            animation: slideRight 0.6s ease 0.2s forwards;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--color-cyan);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .hero h1 {
+            font-family: var(--font-primary);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--color-text-primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            opacity: 0;
+            animation: slideRight 0.6s ease 0.4s forwards;
+        }
+
+        .hero h1 .highlight {
+            color: var(--color-orange);
+            position: relative;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--color-orange);
+            opacity: 0.3;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-primary);
+            font-size: 1.125rem;
+            color: var(--color-text-secondary);
+            max-width: 480px;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: slideRight 0.6s ease 0.6s forwards;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            opacity: 0;
+            animation: slideRight 0.6s ease 0.8s forwards;
+        }
+
+        .btn-primary {
+            font-family: var(--font-primary);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            background: var(--color-orange);
+            color: var(--color-navy);
+            border: 2px solid var(--color-orange);
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.15s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--color-orange);
+            box-shadow: 0 0 30px var(--color-orange-glow);
+        }
+
+        .btn-primary svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-primary:hover svg {
+            transform: translateX(4px);
+        }
+
+        .btn-ghost {
+            font-family: var(--font-primary);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            background: transparent;
+            color: var(--color-text-primary);
+            border: 2px solid var(--color-border);
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.15s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--color-cyan);
+            color: var(--color-cyan);
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            position: relative;
+            height: 500px;
+            opacity: 0;
+            animation: fadeIn 1s ease 0.6s forwards;
+        }
+
+        .hero-card {
+            position: absolute;
+            background: var(--color-navy-light);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-card-1 {
+            top: 10%;
+            right: 10%;
+            width: 280px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-card-2 {
+            bottom: 15%;
+            left: 5%;
+            width: 240px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .hero-card-3 {
+            top: 50%;
+            right: 30%;
+            transform: translateY(-50%);
+            width: 200px;
+            animation: float 7s ease-in-out infinite 1s;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--color-orange), var(--color-cyan));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--color-navy);
+        }
+
+        .card-title {
+            font-family: var(--font-primary);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        .card-metric {
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-orange);
+            margin-bottom: 0.25rem;
+        }
+
+        .card-label {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Glowing orbs */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .glow-orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--color-orange-glow);
+            top: 20%;
+            right: 10%;
+            opacity: 0.5;
+        }
+
+        .glow-orb-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--color-cyan-glow);
+            bottom: 20%;
+            left: 20%;
+            opacity: 0.3;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 4rem;
+            background: var(--color-navy-deep);
+            position: relative;
+            z-index: 1;
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .features-header h2 {
+            font-family: var(--font-primary);
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .features-header p {
+            font-family: var(--font-primary);
+            font-size: 1.0625rem;
+            color: var(--color-text-secondary);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--color-navy);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(180deg, var(--color-orange), var(--color-cyan));
+            transition: height 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-orange);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-number {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--color-orange);
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-primary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            font-family: var(--font-primary);
+            font-size: 0.9375rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        .feature-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .feature-tag {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--color-cyan);
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Animations */
+        @keyframes slideRight {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 6rem 2rem 4rem;
+            }
+
+            .hero-content {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .hero-subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-cta-group {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .features {
+                padding: 4rem 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">
-                    <span class="logo-text">Snow<span class="logo-accent">It</span></span>
-                    <span class="logo-subtitle">Enterprise Tech</span>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    <li><a href="#contact" class="btn-nav">Get Started</a></li>
-                </ul>
-                <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <nav>
+        <a href="#" class="logo">
+            <div class="logo-mark">S</div>
+            Snow<span>IT</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <button class="nav-cta">Get Quote</button>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <div class="hero-label">Technology That Transforms Industries</div>
-                    <h1 class="hero-title">
-                        Enterprise Solutions for Mission-Critical Operations
-                    </h1>
-                    <p class="hero-subtitle">
-                        SnowIt partners with healthcare providers, transportation systems, and large enterprises to deliver proven IT infrastructure that ensures operational continuity at the highest levels of reliability.
-                    </p>
-                    <div class="hero-metrics">
-                        <div class="metric">
-                            <div class="metric-value">99.95%</div>
-                            <div class="metric-label">Uptime SLA</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">20+</div>
-                            <div class="metric-label">Enterprise Clients</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">5+</div>
-                            <div class="metric-label">Years Delivering Excellence</div>
-                        </div>
-                    </div>
-                    <div class="hero-cta">
-                        <a href="#contact" class="btn btn-primary btn-glow">Schedule Consultation</a>
-                        <a href="#services" class="btn btn-secondary">Explore Solutions</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="hero-image-accent accent-1"></div>
-                    <div class="hero-image-accent accent-2"></div>
-                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80" alt="Enterprise technology infrastructure" loading="lazy">
-                    <div class="hero-image-overlay"></div>
-                </div>
+        <div class="hero-content">
+            <span class="hero-badge">Enterprise IT Partner</span>
+            <h1>Enterprise IT solutions from the <span class="highlight">Balkans</span></h1>
+            <p class="hero-subtitle">Healthcare-grade reliability. Modern engineering. Global standards. We build systems that scale.</p>
+
+            <div class="hero-cta-group">
+                <a href="#" class="btn-primary">
+                    Start Project
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+                <a href="#" class="btn-ghost">View Work</a>
             </div>
         </div>
-        <div class="hero-pattern"></div>
-    </section>
 
-    <!-- Trust Indicators -->
-    <section class="trust-section">
-        <div class="container">
-            <p class="trust-label">Trusted by leading organizations across industries</p>
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <div class="trust-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24 4C13.5 4 5 12.5 5 23V40C5 42.2 6.8 44 9 44H39C41.2 44 43 42.2 43 40V23C43 12.5 34.5 4 24 4ZM24 12C28.4 12 32 15.6 32 20C32 24.4 28.4 28 24 28C19.6 28 16 24.4 16 20C16 15.6 19.6 12 24 12ZM12 36C12 33.8 13.8 32 16 32H32C34.2 32 36 33.8 36 36V40H12V36Z" fill="currentColor"/>
+        <div class="hero-visual">
+            <div class="hero-card hero-card-1">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                     </div>
-                    <div class="trust-text">Healthcare Systems</div>
+                    <span class="card-title">Uptime</span>
                 </div>
-                <div class="trust-item">
-                    <div class="trust-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24 2C12.95 2 4 10.95 4 22V44H8V32H40V44H44V22C44 10.95 35.05 2 24 2ZM24 8C30.63 8 36 13.37 36 20V28H12V20C12 13.37 17.37 8 24 8ZM10 34V38H14V34H10ZM18 34V38H22V34H18ZM26 34V38H30V34H26ZM34 34V38H38V34H34Z" fill="currentColor"/>
+                <div class="card-metric">99.9%</div>
+                <div class="card-label">System Availability</div>
+            </div>
+
+            <div class="hero-card hero-card-2">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                     </div>
-                    <div class="trust-text">Transportation Networks</div>
+                    <span class="card-title">Security</span>
                 </div>
-                <div class="trust-item">
-                    <div class="trust-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 6H20V20H6V6ZM26 6H42V20H26V6ZM6 26H20V42H6V26ZM26 26H42V42H26V26Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M13 11V15M13 31V35M33 11V15M33 31V35M11 13H17M11 33H17M31 13H37M31 33H37" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <div class="card-metric">HIPAA</div>
+                <div class="card-label">Compliant Systems</div>
+            </div>
+
+            <div class="hero-card hero-card-3">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </div>
-                    <div class="trust-text">Enterprise Organizations</div>
+                    <span class="card-title">Team</span>
                 </div>
-                <div class="trust-item">
-                    <div class="trust-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24 2C12.95 2 4 10.95 4 22C4 33.05 12.95 42 24 42C35.05 42 44 33.05 44 22C44 10.95 35.05 2 24 2ZM24 6C32.84 6 40 13.16 40 22C40 30.84 32.84 38 24 38C15.16 38 8 30.84 8 22C8 13.16 15.16 6 24 6Z" fill="currentColor"/>
-                            <path d="M24 10C16.27 10 10 16.27 10 24C10 31.73 16.27 38 24 38C31.73 38 38 31.73 38 24C38 16.27 31.73 10 24 10ZM24 14C29.52 14 34 18.48 34 24C34 29.52 29.52 34 24 34C18.48 34 14 29.52 14 24C14 18.48 18.48 14 24 14Z" fill="currentColor" opacity="0.7"/>
-                            <path d="M24 18C20.69 18 18 20.69 18 24C18 27.31 20.69 30 24 30C27.31 30 30 27.31 30 24C30 20.69 27.31 18 24 18Z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <div class="trust-text">Mission-Critical Infrastructure</div>
-                </div>
+                <div class="card-metric">15+</div>
+                <div class="card-label">Engineers</div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Who We Are</span>
-                <h2 class="section-title">Enterprise-Grade Partnership</h2>
-            </div>
-            
-            <div class="about-grid">
-                <div class="about-main">
-                    <div class="about-text">
-                        <p class="about-intro">
-                            SnowIt is a specialized enterprise IT solutions provider based in Bosnia and Herzegovina, 
-                            delivering mission-critical systems to organizations that demand operational excellence.
-                        </p>
-                        <p>
-                            Founded by <strong>Asmir Merdžanović</strong>, SnowIt combines deep technical expertise with 
-                            enterprise-level discipline. We understand that in healthcare, transportation, and critical infrastructure, 
-                            technology doesn't just support operations—it <em>enables</em> them.
-                        </p>
-                        <p>
-                            Our approach is pragmatic: we focus on solving real problems at scale, ensuring reliability under 
-                            pressure, and building partnerships based on trust and proven results.
-                        </p>
-                    </div>
-                </div>
+    <section class="features">
+        <div class="features-header">
+            <h2>What we build</h2>
+            <p>Enterprise software that works. No excuses, no exceptions.</p>
+        </div>
 
-                <div class="founder-card">
-                    <div class="founder-image">
-                        <div class="image-placeholder">
-                            <svg width="120" height="120" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="founder-info">
-                        <h3>Asmir Merdžanović</h3>
-                        <p class="founder-title">Founder & Technical Director</p>
-                        <p class="founder-bio">
-                            Enterprise architect with expertise in large-scale system design, healthcare compliance, 
-                            and transportation infrastructure. Led implementations for hospitals and railway systems across Europe.
-                        </p>
-                        <div class="founder-expertise">
-                            <span class="expertise-badge">Healthcare IT</span>
-                            <span class="expertise-badge">Railway Systems</span>
-                            <span class="expertise-badge">Enterprise Architecture</span>
-                        </div>
-                    </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-number">01</div>
+                <h3>Healthcare Systems</h3>
+                <p>HIPAA-compliant platforms for hospitals, clinics, and home health agencies. Real-time monitoring, secure data, zero downtime.</p>
+                <div class="feature-tags">
+                    <span class="feature-tag">HIPAA</span>
+                    <span class="feature-tag">HL7</span>
+                    <span class="feature-tag">FHIR</span>
                 </div>
             </div>
 
-            <div class="about-stats">
-                <div class="stat-card">
-                    <div class="stat-icon">📊</div>
-                    <div class="stat-number">20+</div>
-                    <div class="stat-label">Enterprise Projects</div>
-                    <p class="stat-description">Deployed across healthcare, transportation, and critical infrastructure</p>
+            <div class="feature-card">
+                <div class="feature-number">02</div>
+                <h3>Enterprise Integration</h3>
+                <p>Connect legacy systems with modern infrastructure. APIs, microservices, and data pipelines that scale with your business.</p>
+                <div class="feature-tags">
+                    <span class="feature-tag">REST</span>
+                    <span class="feature-tag">GraphQL</span>
+                    <span class="feature-tag">Kafka</span>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon">⏱️</div>
-                    <div class="stat-number">99.95%</div>
-                    <div class="stat-label">Average Uptime</div>
-                    <p class="stat-description">Mission-critical systems require mission-critical partners</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🌍</div>
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Years Proven</div>
-                    <p class="stat-description">Consistently delivering results in demanding environments</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🔐</div>
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Compliance</div>
-                    <p class="stat-description">HIPAA, regulatory compliance, and security best practices</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-number">03</div>
+                <h3>Cloud Infrastructure</h3>
+                <p>Multi-cloud architecture, automated deployments, and 24/7 monitoring. Your systems run, we handle the rest.</p>
+                <div class="feature-tags">
+                    <span class="feature-tag">AWS</span>
+                    <span class="feature-tag">Azure</span>
+                    <span class="feature-tag">K8s</span>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">What We Deliver</span>
-                <h2 class="section-title">Enterprise Solutions That Scale</h2>
-                <p class="section-description">
-                    Industry-specific expertise combined with enterprise-grade delivery standards
-                </p>
-            </div>
-
-            <div class="services-grid">
-                <!-- Healthcare IT -->
-                <div class="service-card">
-                    <div class="service-number">01</div>
-                    <div class="service-header">
-                        <div class="service-icon">
-                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="32" cy="32" r="28" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="1.5"/>
-                                <g fill="currentColor">
-                                    <path d="M32 16C23.16 16 16 23.16 16 32C16 40.84 23.16 48 32 48C40.84 48 48 40.84 48 32C48 23.16 40.84 16 32 16ZM32 20C38.62 20 44 25.38 44 32C44 38.62 38.62 44 32 44C25.38 44 20 38.62 20 32C20 25.38 25.38 20 32 20Z"/>
-                                    <path d="M32 26V38M26 32H38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <h3 class="service-title">Healthcare IT Systems</h3>
-                    </div>
-                    <p class="service-description">
-                        Complete IT infrastructure for hospitals and healthcare networks. From patient data systems to 
-                        compliance-ready infrastructure, we understand healthcare's unique demands.
-                    </p>
-                    <ul class="service-features">
-                        <li>Hospital Management Systems (HMS)</li>
-                        <li>Electronic Health Records (EHR) Integration</li>
-                        <li>HIPAA-Compliant Infrastructure</li>
-                        <li>Healthcare Data Interoperability</li>
-                        <li>Medical Device Integration</li>
-                        <li>Emergency Department Systems</li>
-                    </ul>
-                    <div class="service-cta">
-                        <a href="#contact" class="service-link">Learn More →</a>
-                    </div>
-                </div>
-
-                <!-- Transportation & Railway -->
-                <div class="service-card">
-                    <div class="service-number">02</div>
-                    <div class="service-header">
-                        <div class="service-icon">
-                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="32" cy="32" r="28" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="1.5"/>
-                                <g fill="currentColor">
-                                    <path d="M20 28C17.79 28 16 29.79 16 32V42C16 43.1 16.9 44 18 44H20V46C20 47.1 20.9 48 22 48C23.1 48 24 47.1 24 46V44H40V46C40 47.1 40.9 48 42 48C43.1 48 44 47.1 44 46V44H46C47.1 44 48 43.1 48 42V32C48 29.79 46.21 28 44 28H20ZM20 32H44V40H20V32Z"/>
-                                    <circle cx="22" cy="42" r="2" fill="currentColor"/>
-                                    <circle cx="42" cy="42" r="2" fill="currentColor"/>
-                                    <path d="M16 24H48V26H16Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <h3 class="service-title">Transportation & Railway Systems</h3>
-                    </div>
-                    <p class="service-description">
-                        Advanced IT platforms for transportation networks. Railway management, real-time operational control, 
-                        and passenger-facing systems designed for scale and reliability.
-                    </p>
-                    <ul class="service-features">
-                        <li>Railway Management Platforms</li>
-                        <li>Ticketing & Reservation Systems</li>
-                        <li>Real-Time Monitoring & Control</li>
-                        <li>Fleet Management & Logistics</li>
-                        <li>Passenger Information Systems</li>
-                        <li>Operational Analytics</li>
-                    </ul>
-                    <div class="service-cta">
-                        <a href="#contact" class="service-link">Learn More →</a>
-                    </div>
-                </div>
-
-                <!-- Enterprise Infrastructure -->
-                <div class="service-card">
-                    <div class="service-number">03</div>
-                    <div class="service-header">
-                        <div class="service-icon">
-                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="32" cy="32" r="28" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="1.5"/>
-                                <g fill="currentColor">
-                                    <path d="M14 16H50V20H14V16ZM16 24H20V36H16V24ZM24 24H28V36H24V24ZM32 24H36V36H32V24ZM40 24H44V36H40V24ZM14 40H50V44H14V40Z"/>
-                                    <rect x="18" y="26" width="2" height="2" fill="currentColor" opacity="0.6"/>
-                                    <rect x="26" y="26" width="2" height="2" fill="currentColor" opacity="0.6"/>
-                                    <rect x="34" y="26" width="2" height="2" fill="currentColor" opacity="0.6"/>
-                                    <rect x="42" y="26" width="2" height="2" fill="currentColor" opacity="0.6"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <h3 class="service-title">Enterprise Infrastructure & Development</h3>
-                    </div>
-                    <p class="service-description">
-                        Scalable, secure, and maintainable systems for large organizations. Custom development, 
-                        architecture design, and integration for complex enterprise environments.
-                    </p>
-                    <ul class="service-features">
-                        <li>Custom Software Development</li>
-                        <li>Enterprise Architecture Design</li>
-                        <li>Cloud & On-Premise Solutions</li>
-                        <li>System Integration & APIs</li>
-                        <li>Legacy Modernization</li>
-                        <li>24/7 Managed Services</li>
-                    </ul>
-                    <div class="service-cta">
-                        <a href="#contact" class="service-link">Learn More →</a>
-                    </div>
-                </div>
-
-                <!-- Future-Ready -->
-                <div class="service-card">
-                    <div class="service-number">04</div>
-                    <div class="service-header">
-                        <div class="service-icon">
-                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="32" cy="32" r="28" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="1.5"/>
-                                <g fill="currentColor">
-                                    <path d="M32 10C32 10 28 14.5 28 20C28 24.42 29.93 28.36 32 31.34C34.07 28.36 36 24.42 36 20C36 14.5 32 10 32 10Z" stroke="currentColor" stroke-width="1" fill="none"/>
-                                    <circle cx="32" cy="20" r="2.5" fill="currentColor"/>
-                                    <path d="M18 38H46V44C46 46.2 44.2 48 42 48H22C19.8 48 18 46.2 18 44V38Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                                    <path d="M24 38V34C24 32.9 24.9 32 26 32H38C39.1 32 40 32.9 40 34V38"/>
-                                    <circle cx="32" cy="44" r="1.5" fill="currentColor"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <h3 class="service-title">Digital Transformation & Innovation</h3>
-                    </div>
-                    <p class="service-description">
-                        Next-generation technology integration for forward-thinking organizations. IoT, AI/ML, 
-                        and data analytics that create competitive advantage.
-                    </p>
-                    <ul class="service-features">
-                        <li>Digital Transformation Consulting</li>
-                        <li>IoT & Connected Systems</li>
-                        <li>Data Analytics & Business Intelligence</li>
-                        <li>AI/ML Implementation</li>
-                        <li>Predictive Systems</li>
-                        <li>Technology Strategy</li>
-                    </ul>
-                    <div class="service-cta">
-                        <a href="#contact" class="service-link">Learn More →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why SnowIt Section -->
-    <section id="why-snowit" class="why-snowit">
-        <div class="container">
-            <div class="section-header why-header">
-                <span class="section-label">Why SnowIt</span>
-                <h2 class="section-title">The SnowIt Difference</h2>
-            </div>
-
-            <div class="advantages-grid">
-                <div class="advantage">
-                    <div class="advantage-icon">🎯</div>
-                    <h3>Enterprise-Grade Expertise</h3>
-                    <p>Deep, specialized experience in healthcare, transportation, and critical infrastructure. We understand the stakes.</p>
-                </div>
-                <div class="advantage">
-                    <div class="advantage-icon">✅</div>
-                    <h3>Proven Track Record</h3>
-                    <p>20+ successful deployments. Battle-tested systems running in production environments handling millions of transactions.</p>
-                </div>
-                <div class="advantage">
-                    <div class="advantage-icon">🔧</div>
-                    <h3>End-to-End Delivery</h3>
-                    <p>From initial assessment through deployment and ongoing support. We're committed to your long-term success.</p>
-                </div>
-                <div class="advantage">
-                    <div class="advantage-icon">📈</div>
-                    <h3>Scalable by Design</h3>
-                    <p>Architecture built for growth. Our systems scale with your organization while maintaining performance and reliability.</p>
-                </div>
-                <div class="advantage">
-                    <div class="advantage-icon">🔐</div>
-                    <h3>Security & Compliance First</h3>
-                    <p>HIPAA compliance, data protection frameworks, and security protocols built into every system from the ground up.</p>
-                </div>
-                <div class="advantage">
-                    <div class="advantage-icon">🌐</div>
-                    <h3>Local + Global Standards</h3>
-                    <p>Based in Bosnia and Herzegovina with international best practices. World-class solutions for your region.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Preview -->
-    <section class="portfolio-preview">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Case Studies</span>
-                <h2 class="section-title">Real Results, Real Impact</h2>
-                <p class="section-description">
-                    See how we've transformed operations for leading organizations
-                </p>
-            </div>
-            <div class="portfolio-link">
-                <a href="portfolio.html" class="btn btn-primary btn-glow">View Full Portfolio →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="section-header contact-header">
-                        <h2 class="contact-title">Let's Discuss Your Technology Strategy</h2>
-                        <p class="section-description contact-description">
-                            Schedule a consultation with our team. We'll assess your needs and propose solutions tailored 
-                            to your organization's unique requirements.
-                        </p>
-                    </div>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">📍</div>
-                            <div>
-                                <div class="contact-item-label">Location</div>
-                                <div class="contact-item-value">Bosnia and Herzegovina</div>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">✉️</div>
-                            <div>
-                                <div class="contact-item-label">Email</div>
-                                <div class="contact-item-value">info@snowit.ba</div>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">🌐</div>
-                            <div>
-                                <div class="contact-item-label">Website</div>
-                                <div class="contact-item-value">snowit.ba</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-wrapper">
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Company *</label>
-                            <input type="text" id="company" name="company" placeholder="Your organization" required>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" placeholder="+387 (optional)">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Area of Interest</label>
-                            <select id="service" name="service">
-                                <option value="">Select a service</option>
-                                <option value="healthcare">Healthcare IT Systems</option>
-                                <option value="transportation">Transportation & Railway Systems</option>
-                                <option value="enterprise">Enterprise Infrastructure</option>
-                                <option value="digital">Digital Transformation</option>
-                                <option value="other">Other / Not Sure</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Project Details *</label>
-                            <textarea id="message" name="message" placeholder="Tell us about your project, challenges, and goals..." rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full btn-glow">Request Consultation</button>
-                        <p class="form-privacy">
-                            We respect your privacy. Your information will be used only to discuss your inquiry and contact you accordingly.
-                        </p>
-                    </form>
-                    <div id="formSuccess" class="form-success" style="display: none;">
-                        <div class="success-icon">✓</div>
-                        <h3>Thank You!</h3>
-                        <p>We've received your inquiry. Our team will contact you within 24 hours.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo footer-logo">
-                        <span class="logo-text">Snow<span class="logo-accent">It</span></span>
-                    </div>
-                    <p class="footer-tagline">
-                        Enterprise technology solutions that power mission-critical operations.
-                    </p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h4>Solutions</h4>
-                        <ul>
-                            <li><a href="#services">Healthcare IT</a></li>
-                            <li><a href="#services">Transportation Systems</a></li>
-                            <li><a href="#services">Enterprise Infrastructure</a></li>
-                            <li><a href="#services">Digital Transformation</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#why-snowit">Why SnowIt</a></li>
-                            <li><a href="portfolio.html">Portfolio</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Resources</h4>
-                        <ul>
-                            <li><a href="careers.html">Careers</a></li>
-                            <li><a href="#contact">Support</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 SnowIt. All rights reserved.</p>
-                <p class="footer-credit">Founded by Asmir Merdžanović</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
