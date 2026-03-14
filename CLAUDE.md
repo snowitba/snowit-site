@@ -4,7 +4,7 @@
 **Status:** Active — production website (GitHub Pages)
 
 ## BookStack — Provjeri PRVO
-Prije traženja bilo čega — provjeri BookStack (http://localhost:6875). Centralna baza znanja za tools, skills, hooks, agents, rules, projekte, klijente, dokumentaciju. Ako odgovor postoji tamo — NE TRAŽI dalje.
+Prije traženja bilo čega — provjeri BookStack (https://docs.basicconsulting.no). Centralna baza znanja za tools, skills, hooks, agents, rules, projekte, klijente, dokumentaciju. Ako odgovor postoji tamo — NE TRAŽI dalje.
 
 ## About
 SnowIT website — static website deployed on GitHub Pages. Multi-page site (index, careers, portfolio, usluge) sa custom branding, Serbian language support. Full design system sa Inter font, custom CSS variables.
@@ -21,7 +21,7 @@ SnowIT website — static website deployed on GitHub Pages. Multi-page site (ind
 - **Branding:** logos, OG image, favicon
 - **Deployment docs:** /Users/makinja/projects/snowit-site/DEPLOYMENT.md
 - **Git:** /Users/makinja/projects/snowit-site/.git
-- **BookStack:** http://localhost:6875 → Client Projects shelf
+- **BookStack:** https://docs.basicconsulting.no → Client Projects shelf
 
 ## Tech Stack
 - **Frontend:** Static HTML/CSS/JS
