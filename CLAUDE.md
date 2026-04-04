@@ -1,65 +1,27 @@
 # SnowIT Website
-
-**Type:** Client (Website)
-**Status:** Active — production website (GitHub Pages)
-
-## BookStack — Provjeri PRVO
-Prije traženja bilo čega — provjeri BookStack (https://docs.basicconsulting.no). Centralna baza znanja za tools, skills, hooks, agents, rules, projekte, klijente, dokumentaciju. Ako odgovor postoji tamo — NE TRAŽI dalje.
+**Type:** Client (Website) | **Status:** Active — production (GitHub Pages)
 
 ## About
-SnowIT website — static website deployed on GitHub Pages. Multi-page site (index, careers, portfolio, usluge) sa custom branding, Serbian language support. Full design system sa Inter font, custom CSS variables.
+SnowIT static website deployed on GitHub Pages. Multi-page (index, careers, portfolio, usluge). Serbian language. Inter font, custom CSS design system.
 
 ## Key Paths
-- **Root:** /Users/makinja/projects/snowit-site
-- **Main page:** /Users/makinja/projects/snowit-site/index.html
-- **Careers:** /Users/makinja/projects/snowit-site/careers.html
-- **Portfolio:** /Users/makinja/projects/snowit-site/portfolio.html
-- **Services:** /Users/makinja/projects/snowit-site/usluge.html
-- **Styles:** /Users/makinja/projects/snowit-site/styles.css
-- **Variables:** /Users/makinja/projects/snowit-site/variables.css
-- **Scripts:** /Users/makinja/projects/snowit-site/script.js
-- **Branding:** logos, OG image, favicon
-- **Deployment docs:** /Users/makinja/projects/snowit-site/DEPLOYMENT.md
-- **Git:** /Users/makinja/projects/snowit-site/.git
-- **BookStack:** https://docs.basicconsulting.no → Client Projects shelf
+- **Root:** ~/projects/snowit-site/
+- index.html / careers.html / portfolio.html / usluge.html
+- styles.css + variables.css — design system
+- DEPLOYMENT.md — deployment procedure
+- CNAME — custom domain config (DO NOT DELETE)
 
 ## Tech Stack
-- **Frontend:** Static HTML/CSS/JS
-- **Deployment:** GitHub Pages
-- **Font:** Inter (custom)
-- **Language:** Serbian (Bosnian)
-- **Domain:** Custom domain (CNAME)
+- Static HTML/CSS/JS
+- GitHub Pages deployment
+- Inter font, CSS variables
 
-## Team / Contacts
-- **Client:** SnowIT
-- **Language:** Serbian/Bosnian
-- **Related project:** /Users/makinja/projects/snowit
+## Rules
+1. NIKAD deploy direktno — follow DEPLOYMENT.md
+2. CNAME file — DO NOT DELETE (custom domain)
+3. Language: Serbian (bokmål for comments)
+4. CSS variables centralized in variables.css
+5. OG image (og-image.png) for social sharing
 
-## Important Rules
-1. NIKAD deploy direktno — use GitHub Pages workflow
-2. DEPLOYMENT.md sadrži deployment procedure
-3. CNAME file za custom domain — NE BRIŠI
-4. Serbian language — sav content mora biti na srpskom
-5. Logo i branding assets moraju biti consistent
-6. OG image (og-image.png) za social sharing
-7. Multi-page consistency — index, careers, portfolio, usluge
-8. CSS variables u variables.css — centralized theming
-9. Git repo active — commit messages na engleskom
-
-## Notes
-- README.md sadrži project documentation
-- DEPLOYMENT.md — deployment guide
-- index.html — main landing page
-- careers.html — careers/jobs page
-- portfolio.html — portfolio showcase
-- usluge.html — services page (Serbian: "usluge")
-- styles.css — main stylesheet
-- variables.css — CSS custom properties
-- script.js — interactive features
-- logo-512.png — high-res logo
-- logo-icon.svg — SVG icon
-- favicon.svg — browser favicon
-- og-image.png — Open Graph image za social media
-- CNAME — custom domain configuration
-- .gitignore configured
-- vercel.json present — možda i Vercel deployment option
+---
+> Boundaries: NEVER write outside ~/projects/snowit-site/. Global rules: ~/system/rules/
