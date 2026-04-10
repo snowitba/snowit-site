@@ -10,7 +10,6 @@ const SNOWIT_TRANSLATIONS = {
         // Nav
         'nav.home': 'Naslovna',
         'nav.about': 'O nama',
-        'nav.services': 'Usluge',
         'nav.usluge': 'Usluge',
         'nav.portfolio': 'Portfolio',
         'nav.careers': 'Karijere',
@@ -328,7 +327,6 @@ const SNOWIT_TRANSLATIONS = {
         // Nav
         'nav.home': 'Home',
         'nav.about': 'About',
-        'nav.services': 'Services',
         'nav.usluge': 'Services',
         'nav.portfolio': 'Portfolio',
         'nav.careers': 'Careers',
