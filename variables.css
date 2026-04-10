@@ -240,3 +240,47 @@
 .glow-cyan {
     box-shadow: var(--shadow-cyan-glow);
 }
+
+/* ═══════════════════════════════════════════════════════════
+   LANGUAGE TOGGLE — BS | EN switcher
+   ═══════════════════════════════════════════════════════════ */
+
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.lang-toggle-btn {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    padding: 0.375rem 0.625rem;
+    background: transparent;
+    color: var(--color-text-muted);
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all var(--duration-fast) var(--ease-snap);
+    line-height: 1;
+}
+
+.lang-toggle-btn:hover {
+    color: var(--color-text-primary);
+    background: var(--color-navy-light);
+}
+
+.lang-toggle-btn.active {
+    background: var(--color-orange);
+    color: var(--color-navy);
+    font-weight: 700;
+}
+
+.lang-toggle-btn + .lang-toggle-btn {
+    border-left: 1px solid var(--color-border);
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1142,13 +1142,17 @@
             Snow<span>IT</span>
         </a>
         <ul class="nav-links">
-            <li><a href="#features">Services</a></li>
-            <li><a href="usluge.html">Usluge</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#features" data-i18n="nav.services">Usluge</a></li>
+            <li><a href="usluge.html" data-i18n="nav.usluge">Usluge</a></li>
+            <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+            <li><a href="careers.html" data-i18n="nav.careers">Karijere</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Kontakt</a></li>
         </ul>
-        <a href="mailto:info@snowit.ba" class="nav-cta">Get Quote</a>
+        <div class="lang-toggle">
+            <button class="lang-toggle-btn" data-lang="bs">BS</button>
+            <button class="lang-toggle-btn" data-lang="en">EN</button>
+        </div>
+        <a href="mailto:info@snowit.ba" class="nav-cta" data-i18n="nav.cta">Upit</a>
         <button class="mobile-menu-toggle" aria-label="Toggle menu">
             <span></span>
             <span></span>
@@ -1158,18 +1162,18 @@
 
     <section class="hero">
         <div class="hero-content">
-            <span class="hero-badge">Enterprise IT Partner</span>
-            <h1>Enterprise IT solutions from the <span class="highlight">Balkans</span></h1>
-            <p class="hero-subtitle">Healthcare-grade reliability. Modern engineering. Global standards. We build systems that scale.</p>
+            <span class="hero-badge" data-i18n="index.hero.badge">Enterprise IT Partner</span>
+            <h1 data-i18n-html="index.hero.h1">Enterprise IT rješenja iz <span class="highlight">Balkana</span></h1>
+            <p class="hero-subtitle" data-i18n="index.hero.subtitle">Pouzdanost na nivou zdravstvene industrije. Moderno inženjerstvo. Globalni standardi. Gradimo sisteme koji skaliraju.</p>
 
             <div class="hero-cta-group">
                 <a href="mailto:info@snowit.ba" class="btn-primary">
-                    Start Project
+                    <span data-i18n="index.hero.cta.primary">Pokreni Projekat</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                 </a>
-                <a href="portfolio.html" class="btn-ghost">View Work</a>
+                <a href="portfolio.html" class="btn-ghost" data-i18n="index.hero.cta.ghost">Pogledaj Radove</a>
             </div>
         </div>
 
@@ -1181,10 +1185,10 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                     </div>
-                    <span class="card-title">Uptime</span>
+                    <span class="card-title" data-i18n="index.hero.card1.title">Dostupnost</span>
                 </div>
                 <div class="card-metric">99.9%</div>
-                <div class="card-label">System Availability</div>
+                <div class="card-label" data-i18n="index.hero.card1.label">Dostupnost Sistema</div>
             </div>
 
             <div class="hero-card hero-card-2">
@@ -1194,10 +1198,10 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                     </div>
-                    <span class="card-title">Security</span>
+                    <span class="card-title" data-i18n="index.hero.card2.title">Sigurnost</span>
                 </div>
                 <div class="card-metric">HIPAA</div>
-                <div class="card-label">Compliant Systems</div>
+                <div class="card-label" data-i18n="index.hero.card2.label">Usklađeni Sistemi</div>
             </div>
 
             <div class="hero-card hero-card-3">
@@ -1207,25 +1211,25 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </div>
-                    <span class="card-title">Team</span>
+                    <span class="card-title" data-i18n="index.hero.card3.title">Tim</span>
                 </div>
                 <div class="card-metric">15+</div>
-                <div class="card-label">Engineers</div>
+                <div class="card-label" data-i18n="index.hero.card3.label">Inženjera</div>
             </div>
         </div>
     </section>
 
     <section class="features" id="features">
         <div class="features-header">
-            <h2>What we build</h2>
-            <p>Enterprise software that works. No excuses, no exceptions.</p>
+            <h2 data-i18n="index.features.h2">Što gradimo</h2>
+            <p data-i18n="index.features.subtitle">Enterprise softver koji radi. Bez izuzetaka.</p>
         </div>
 
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-number">01</div>
-                <h3>Healthcare Systems</h3>
-                <p>HIPAA-compliant platforms for hospitals, clinics, and home health agencies. Real-time monitoring, secure data, zero downtime.</p>
+                <h3 data-i18n="index.features.01.title">Zdravstveni Sistemi</h3>
+                <p data-i18n="index.features.01.desc">HIPAA-usklađene platforme za bolnice, klinike i agencije za kućnu njegu. Real-time monitoring, sigurni podaci, nula zastoja.</p>
                 <div class="feature-tags">
                     <span class="feature-tag">HIPAA</span>
                     <span class="feature-tag">HL7</span>
@@ -1235,8 +1239,8 @@
 
             <div class="feature-card">
                 <div class="feature-number">02</div>
-                <h3>Enterprise Integration</h3>
-                <p>Connect legacy systems with modern infrastructure. APIs, microservices, and data pipelines that scale with your business.</p>
+                <h3 data-i18n="index.features.02.title">Enterprise Integracija</h3>
+                <p data-i18n="index.features.02.desc">Povežite legacy sisteme s modernom infrastrukturom. API-ji, mikroservisi i data pipeline-ovi koji skaliraju s vašim poslovanjem.</p>
                 <div class="feature-tags">
                     <span class="feature-tag">REST</span>
                     <span class="feature-tag">GraphQL</span>
@@ -1246,8 +1250,8 @@
 
             <div class="feature-card">
                 <div class="feature-number">03</div>
-                <h3>Cloud Infrastructure</h3>
-                <p>Multi-cloud architecture, automated deployments, and 24/7 monitoring. Your systems run, we handle the rest.</p>
+                <h3 data-i18n="index.features.03.title">Cloud Infrastruktura</h3>
+                <p data-i18n="index.features.03.desc">Multi-cloud arhitektura, automatizirani deployment-i i 24/7 monitoring. Vaši sistemi rade, mi brinemo o ostatku.</p>
                 <div class="feature-tags">
                     <span class="feature-tag">AWS</span>
                     <span class="feature-tag">Azure</span>
@@ -1260,36 +1264,36 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="about-header">
-            <span class="section-label">About SnowIT</span>
-            <h2>Enterprise IT from the Balkans</h2>
+            <span class="section-label" data-i18n="index.about.label">O SnowIT-u</span>
+            <h2 data-i18n="index.about.h2">Enterprise IT iz Balkana</h2>
         </div>
         <div class="about-content">
             <div class="about-text">
-                <p>SnowIT is a software development company based in Sarajevo, Bosnia and Herzegovina, specializing in healthcare technology and enterprise software for US and EU markets.</p>
-                <p><strong>What makes us unique:</strong></p>
+                <p data-i18n="index.about.p1">SnowIT je kompanija za razvoj softvera sa sjedištem u Sarajevu, Bosna i Hercegovina, specijalizirana za zdravstvenu tehnologiju i enterprise softver za tržišta SAD-a i EU.</p>
+                <p><strong data-i18n="index.about.unique">Što nas čini posebnim:</strong></p>
                 <ul class="about-list">
-                    <li>Healthcare specialization with HIPAA expertise</li>
-                    <li>AI-augmented development for faster delivery</li>
-                    <li>50% of profits donated to charity</li>
-                    <li>European-quality engineering at competitive rates</li>
+                    <li data-i18n="index.about.li1">Specijalizacija u zdravstvu s HIPAA ekspertizom</li>
+                    <li data-i18n="index.about.li2">AI-augmented razvoj za bržu isporuku</li>
+                    <li data-i18n="index.about.li3">50% profita doniramo u dobrotvorne svrhe</li>
+                    <li data-i18n="index.about.li4">Inženjerstvo europskog kvaliteta po konkurentnim cijenama</li>
                 </ul>
             </div>
             <div class="about-stats-grid">
                 <div class="stat-box">
                     <span class="stat-value">10+</span>
-                    <span class="stat-label">Years Experience</span>
+                    <span class="stat-label" data-i18n="index.about.stat1.label">Godina Iskustva</span>
                 </div>
                 <div class="stat-box">
                     <span class="stat-value">50+</span>
-                    <span class="stat-label">Projects Delivered</span>
+                    <span class="stat-label" data-i18n="index.about.stat2.label">Isporučenih Projekata</span>
                 </div>
                 <div class="stat-box">
                     <span class="stat-value">99.9%</span>
-                    <span class="stat-label">Uptime SLA</span>
+                    <span class="stat-label" data-i18n="index.about.stat3.label">Dostupnost SLA</span>
                 </div>
                 <div class="stat-box">
                     <span class="stat-value">50%</span>
-                    <span class="stat-label">Profits to Charity</span>
+                    <span class="stat-label" data-i18n="index.about.stat4.label">Profita za Dobrotvorne</span>
                 </div>
             </div>
         </div>
@@ -1298,9 +1302,9 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="contact-content">
-            <span class="section-label">Get in Touch</span>
-            <h2>Let's Build Something Great</h2>
-            <p class="contact-description">Ready to start your next project? Contact us for a free consultation.</p>
+            <span class="section-label" data-i18n="index.contact.label">Kontaktirajte Nas</span>
+            <h2 data-i18n="index.contact.h2">Izgradimo Nešto Sjajno</h2>
+            <p class="contact-description" data-i18n="index.contact.desc">Spremni za vaš sljedeći projekat? Kontaktirajte nas za besplatnu konsultaciju.</p>
             <div class="contact-details">
                 <div class="contact-item">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="24" height="24">
@@ -1313,14 +1317,14 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <span>Sarajevo, Bosnia and Herzegovina</span>
+                    <span data-i18n="index.contact.location">Sarajevo, Bosna i Hercegovina</span>
                 </div>
             </div>
             <form class="contact-form" id="contactForm" novalidate>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="name">Name <span class="required">*</span></label>
-                        <input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name">
+                        <label for="name"><span data-i18n="index.contact.label.name">Ime</span> <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="Vaše ime" data-i18n-placeholder="index.contact.placeholder.name" autocomplete="name">
                     </div>
                     <div class="form-group">
                         <label for="email">Email <span class="required">*</span></label>
@@ -1328,21 +1332,21 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="company">Company <span style="color: var(--color-text-muted); font-weight: 400;">(optional)</span></label>
-                    <input type="text" id="company" name="company" placeholder="Your company" autocomplete="organization">
+                    <label for="company"><span data-i18n="index.contact.label.company">Kompanija</span> <span style="color: var(--color-text-muted); font-weight: 400;" data-i18n="index.contact.label.company.optional">(opcionalno)</span></label>
+                    <input type="text" id="company" name="company" placeholder="Vaša kompanija" data-i18n-placeholder="index.contact.placeholder.company" autocomplete="organization">
                 </div>
                 <div class="form-group">
-                    <label for="message">Message <span class="required">*</span></label>
-                    <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project..."></textarea>
+                    <label for="message"><span data-i18n="index.contact.label.message">Poruka</span> <span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Recite nam o vašem projektu..." data-i18n-placeholder="index.contact.placeholder.message"></textarea>
                 </div>
                 <button type="submit" class="btn-primary">
-                    Send Message
+                    <span data-i18n="index.contact.btn.send">Pošalji Poruku</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                 </button>
             </form>
-            <p class="contact-alt">Or email us directly at <a href="mailto:info@snowit.ba">info@snowit.ba</a></p>
+            <p class="contact-alt"><span data-i18n="index.contact.alt">Ili nam pišite direktno na</span> <a href="mailto:info@snowit.ba">info@snowit.ba</a></p>
         </div>
     </section>
 
@@ -1354,31 +1358,31 @@
                     <img src="logo-512.png" alt="SnowIT" class="logo-img">
                     Snow<span>IT</span>
                 </a>
-                <p class="footer-tagline">Enterprise IT solutions from the Balkans. Healthcare-grade reliability. Modern engineering.</p>
+                <p class="footer-tagline" data-i18n="footer.tagline">Enterprise IT rješenja iz Balkana. Pouzdanost na nivou zdravstvene industrije. Moderno inženjerstvo.</p>
             </div>
             <div class="footer-links">
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h4 data-i18n="footer.services">Usluge</h4>
                     <ul>
-                        <li><a href="#features">Healthcare Systems</a></li>
-                        <li><a href="#features">Enterprise Integration</a></li>
-                        <li><a href="#features">Cloud Infrastructure</a></li>
+                        <li><a href="#features" data-i18n="footer.services.healthcare">Zdravstveni Sistemi</a></li>
+                        <li><a href="#features" data-i18n="footer.services.enterprise">Enterprise Integracija</a></li>
+                        <li><a href="#features" data-i18n="footer.services.cloud">Cloud Infrastruktura</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Company</h4>
+                    <h4 data-i18n="footer.company">Kompanija</h4>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#about" data-i18n="footer.company.about">O Nama</a></li>
+                        <li><a href="portfolio.html" data-i18n="footer.company.portfolio">Portfolio</a></li>
+                        <li><a href="careers.html" data-i18n="footer.company.careers">Karijere</a></li>
+                        <li><a href="#contact" data-i18n="footer.company.contact">Kontakt</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 SnowIT. All rights reserved.</p>
-            <p class="footer-credit">Led by Asmir Merdžanović</p>
+            <p data-i18n="footer.copyright">© 2026 SnowIT. Sva prava zadržana.</p>
+            <p class="footer-credit" data-i18n="footer.credit">Vodi Asmir Merdžanović</p>
         </div>
     </footer>
 
@@ -1460,5 +1464,6 @@ Sent via SnowIT Contact Form`;
             });
         }
     </script>
+    <script src="i18n.js"></script>
 </body>
 </html>

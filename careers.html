@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -837,21 +837,25 @@
             Snow<span>IT</span>
         </a>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#features">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="careers.html" class="nav-active">Careers</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Naslovna</a></li>
+            <li><a href="index.html#about" data-i18n="nav.about">O nama</a></li>
+            <li><a href="index.html#features" data-i18n="nav.services">Usluge</a></li>
+            <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+            <li><a href="careers.html" class="nav-active" data-i18n="nav.careers">Karijere</a></li>
         </ul>
-        <a href="mailto:alembasic@gmail.com" class="nav-cta">Get Quote</a>
+        <div class="lang-toggle">
+            <button class="lang-toggle-btn" data-lang="bs">BS</button>
+            <button class="lang-toggle-btn" data-lang="en">EN</button>
+        </div>
+        <a href="mailto:alembasic@gmail.com" class="nav-cta" data-i18n="nav.cta">Upit</a>
     </nav>
 
     <!-- Hero -->
     <section class="careers-hero">
         <div class="container">
-            <div class="careers-hero-badge">SnowIT is Hiring</div>
-            <h1>Build Healthcare Technology That Matters</h1>
-            <p>Join SnowIT's founding team. We're building the future of healthcare software from Sarajevo, while impacting patients across the US and beyond.</p>
+            <div class="careers-hero-badge" data-i18n="careers.hero.badge">SnowIT zapošljava</div>
+            <h1 data-i18n="careers.hero.h1">Gradite Zdravstvenu Tehnologiju Koja Je Važna</h1>
+            <p data-i18n="careers.hero.desc">Pridružite se osnivačkom timu SnowIT-a. Gradimo budućnost zdravstvenog softvera iz Sarajeva, s utjecajem na pacijente širom SAD-a i dalje.</p>
             <div class="hiring-highlight">
                 <div class="highlight-item">
                     <span class="highlight-label">Senior Full-Stack Developer</span>
@@ -873,33 +877,33 @@
     <section class="why-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Why Join Us</span>
-                <h2 class="section-title">What Makes SnowIT Different</h2>
+                <span class="section-label" data-i18n="careers.why.label">Zašto nam se pridružiti</span>
+                <h2 class="section-title" data-i18n="careers.why.h2">Što čini SnowIT drugačijim</h2>
             </div>
             <div class="why-grid">
                 <div class="why-card">
-                    <h3>🏥 Meaningful Work</h3>
-                    <p>Your code directly impacts patient care. Build healthcare software that reduces administrative burden and improves clinical outcomes for real agencies and real patients.</p>
+                    <h3>🏥 <span data-i18n="careers.why.c1.title">Smislen Rad</span></h3>
+                    <p data-i18n="careers.why.c1.desc">Vaš kod direktno utječe na njegu pacijenata. Gradite zdravstveni softver koji smanjuje administrativno opterećenje i poboljšava kliničke ishode za stvarne agencije i stvarne pacijente.</p>
                 </div>
                 <div class="why-card">
-                    <h3>💰 50% to Charity</h3>
-                    <p>We donate half our profits to healthcare charities. Every project you work on funds healthcare access for communities in need. Profit with purpose.</p>
+                    <h3>💰 <span data-i18n="careers.why.c2.title">50% za Dobrotvorne</span></h3>
+                    <p data-i18n="careers.why.c2.desc">Doniramo polovinu profita zdravstvenim dobrotvornim organizacijama. Svaki projekat na kojem radite finansira pristup zdravstvenoj zaštiti zajednicama u potrebi. Profit s ciljem.</p>
                 </div>
                 <div class="why-card">
-                    <h3>🌍 Global Exposure</h3>
-                    <p>Work with US and EU clients. Learn international standards (HIPAA, HL7 FHIR, PCI-DSS). Build your expertise on projects that matter globally.</p>
+                    <h3>🌍 <span data-i18n="careers.why.c3.title">Globalna Izloženost</span></h3>
+                    <p data-i18n="careers.why.c3.desc">Radite s klijentima iz SAD-a i EU. Naučite međunarodne standarde (HIPAA, HL7 FHIR, PCI-DSS). Izgradite ekspertizu na projektima koji su globalno važni.</p>
                 </div>
                 <div class="why-card">
-                    <h3>🤖 AI-Augmented Development</h3>
-                    <p>We use cutting-edge AI tools (Claude, GitHub Copilot) to handle boilerplate. You focus on hard problems, interesting architecture, and real innovation.</p>
+                    <h3>🤖 <span data-i18n="careers.why.c4.title">AI-Augmented Razvoj</span></h3>
+                    <p data-i18n="careers.why.c4.desc">Koristimo napredne AI alate (Claude, GitHub Copilot) za rutinski kod. Vi se fokusirate na teške probleme, zanimljivu arhitekturu i stvarnu inovaciju.</p>
                 </div>
                 <div class="why-card">
-                    <h3>💵 Competitive Pay + Equity</h3>
-                    <p>Above-market salaries for Bosnia. Profit-sharing for founding team members. We pay for talent, and we reward results.</p>
+                    <h3>💵 <span data-i18n="careers.why.c5.title">Konkurentna Plata + Kapital</span></h3>
+                    <p data-i18n="careers.why.c5.desc">Plate iznad tržišnog prosjeka za Bosnu. Dijeljenje profita za članove osnivačkog tima. Plaćamo za talent i nagrađujemo rezultate.</p>
                 </div>
                 <div class="why-card">
-                    <h3>📍 Remote-First Culture</h3>
-                    <p>Work from our Sarajevo office or from home. Flexible schedule, async-first communication, respect for work-life balance. You own your time.</p>
+                    <h3>📍 <span data-i18n="careers.why.c6.title">Remote-First Kultura</span></h3>
+                    <p data-i18n="careers.why.c6.desc">Radite iz našeg sarajevskog ureda ili od kuće. Fleksibilan raspored, async-first komunikacija, poštovanje ravnoteže posla i privatnog života. Vi upravljate vlastitim vremenom.</p>
                 </div>
             </div>
         </div>
@@ -909,8 +913,8 @@
     <section class="jobs-section">
         <div class="container">
             <div class="jobs-header">
-                <h2 class="section-title">Open Positions</h2>
-                <p class="section-description">We're actively hiring talented engineers. Apply now or reach out to <a href="mailto:alembasic@gmail.com">alembasic@gmail.com</a> if you have questions.</p>
+                <h2 class="section-title" data-i18n="careers.jobs.h2">Otvorene Pozicije</h2>
+                <p class="section-description"><span data-i18n="careers.jobs.desc">Aktivno zapošljavamo talentirane inženjere. Prijavite se ili nas kontaktirajte na</span> <a href="mailto:alembasic@gmail.com">alembasic@gmail.com</a> <span data-i18n="careers.jobs.desc2">ako imate pitanja.</span></p>
             </div>
 
             <div class="jobs-grid">
@@ -918,11 +922,11 @@
                 <div class="job-card">
                     <div class="job-header">
                         <div>
-                            <h3 class="job-title">Senior Full-Stack Developer</h3>
+                            <h3 class="job-title" data-i18n="careers.job1.title">Senior Full-Stack Programer</h3>
                             <div class="job-meta">
                                 <span class="job-meta-item">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                    Sarajevo / Remote
+                                    <span data-i18n="careers.job1.location">Sarajevo / Remote</span>
                                 </span>
                                 <span class="job-meta-item">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -930,51 +934,51 @@
                                 </span>
                                 <span class="job-meta-item">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                                    5+ years experience
+                                    <span data-i18n="careers.job1.experience">5+ godina iskustva</span>
                                 </span>
                             </div>
                         </div>
                     </div>
 
-                    <p class="job-description">
-                        Lead development on our HIPAA-compliant healthcare platform. You'll own feature architecture, mentor junior developers, and work directly with healthcare clients. This is a founding team role with real impact.
+                    <p class="job-description" data-i18n="careers.job1.desc">
+                        Vodite razvoj naše HIPAA-usklađene zdravstvene platforme. Bit ćete odgovorni za arhitekturu funkcionalnosti, mentorstvo mlađih programera i direktan rad s klijentima u zdravstvu. Ovo je uloga u osnivačkom timu s pravim utjecajem.
                     </p>
 
                     <div class="job-details">
                         <div class="job-detail">
-                            <div class="job-detail-label">Tech Stack</div>
+                            <div class="job-detail-label" data-i18n="careers.job1.techstack.label">Tehnološki Stack</div>
                             <div class="job-detail-value">React, Node.js, PostgreSQL, AWS</div>
                         </div>
                         <div class="job-detail">
-                            <div class="job-detail-label">Type</div>
-                            <div class="job-detail-value">Full-Time, Permanent</div>
+                            <div class="job-detail-label" data-i18n="careers.job1.type.label">Vrsta</div>
+                            <div class="job-detail-value" data-i18n="careers.job1.type.value">Puno radno vrijeme, Stalno</div>
                         </div>
                     </div>
 
                     <div class="job-requirements">
-                        <h4>Required Skills</h4>
+                        <h4 data-i18n="careers.job1.req.h4">Tražene Vještine</h4>
                         <div class="requirements-list">
-                            <div class="requirement-item">5+ years full-stack development</div>
-                            <div class="requirement-item">React expertise (TypeScript preferred)</div>
-                            <div class="requirement-item">Node.js / Express backend</div>
-                            <div class="requirement-item">PostgreSQL database design</div>
-                            <div class="requirement-item">AWS or cloud infrastructure</div>
-                            <div class="requirement-item">Healthcare/compliance knowledge (nice-to-have)</div>
+                            <div class="requirement-item" data-i18n="careers.job1.req1">5+ godina full-stack razvoja</div>
+                            <div class="requirement-item" data-i18n="careers.job1.req2">Expertiza u Reactu (TypeScript poželjno)</div>
+                            <div class="requirement-item" data-i18n="careers.job1.req3">Node.js / Express backend</div>
+                            <div class="requirement-item" data-i18n="careers.job1.req4">PostgreSQL dizajn baze podataka</div>
+                            <div class="requirement-item" data-i18n="careers.job1.req5">AWS ili cloud infrastruktura</div>
+                            <div class="requirement-item" data-i18n="careers.job1.req6">Znanje o zdravstvu/usklađenosti (prednost)</div>
                         </div>
                     </div>
 
-                    <a href="mailto:alembasic@gmail.com?subject=Application: Senior Full-Stack Developer" class="btn-primary">Apply Now</a>
+                    <a href="mailto:alembasic@gmail.com?subject=Application: Senior Full-Stack Developer" class="btn-primary" data-i18n="careers.job1.apply">Apliciraj Sada</a>
                 </div>
 
                 <!-- Full-Stack Developer (Mid-Level) -->
                 <div class="job-card">
                     <div class="job-header">
                         <div>
-                            <h3 class="job-title">Full-Stack Developer</h3>
+                            <h3 class="job-title" data-i18n="careers.job2.title">Full-Stack Programer</h3>
                             <div class="job-meta">
                                 <span class="job-meta-item">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                    Sarajevo / Remote
+                                    <span data-i18n="careers.job2.location">Sarajevo / Remote</span>
                                 </span>
                                 <span class="job-meta-item">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -982,51 +986,51 @@
                                 </span>
                                 <span class="job-meta-item">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                                    2-4 years experience
+                                    <span data-i18n="careers.job2.experience">2-4 godine iskustva</span>
                                 </span>
                             </div>
                         </div>
                     </div>
 
-                    <p class="job-description">
-                        Build features for our Healthcare and Payment platforms. Work on real-world healthcare and fintech challenges. You'll have mentorship from our senior team and grow your skills on production systems.
+                    <p class="job-description" data-i18n="careers.job2.desc">
+                        Razvijajte funkcionalnosti za naše platforme za zdravstvo i plaćanja. Radite na stvarnim izazovima u zdravstvu i fintechu. Imat ćete mentorstvo od našeg senior tima i razvijati vještine na produkcijskim sistemima.
                     </p>
 
                     <div class="job-details">
                         <div class="job-detail">
-                            <div class="job-detail-label">Tech Stack</div>
+                            <div class="job-detail-label" data-i18n="careers.job2.techstack.label">Tehnološki Stack</div>
                             <div class="job-detail-value">React / React Native, Node.js, PostgreSQL</div>
                         </div>
                         <div class="job-detail">
-                            <div class="job-detail-label">Type</div>
-                            <div class="job-detail-value">Full-Time, Permanent</div>
+                            <div class="job-detail-label" data-i18n="careers.job2.type.label">Vrsta</div>
+                            <div class="job-detail-value" data-i18n="careers.job2.type.value">Puno radno vrijeme, Stalno</div>
                         </div>
                     </div>
 
                     <div class="job-requirements">
-                        <h4>Required Skills</h4>
+                        <h4 data-i18n="careers.job2.req.h4">Tražene Vještine</h4>
                         <div class="requirements-list">
-                            <div class="requirement-item">2-4 years development experience</div>
-                            <div class="requirement-item">Comfortable with React</div>
-                            <div class="requirement-item">Some backend experience (Node.js, Python, etc)</div>
-                            <div class="requirement-item">SQL/database basics</div>
-                            <div class="requirement-item">Git and version control</div>
-                            <div class="requirement-item">Portfolio or GitHub projects</div>
+                            <div class="requirement-item" data-i18n="careers.job2.req1">2-4 godine razvojnog iskustva</div>
+                            <div class="requirement-item" data-i18n="careers.job2.req2">Dobro poznavanje Reacta</div>
+                            <div class="requirement-item" data-i18n="careers.job2.req3">Neko backend iskustvo (Node.js, Python, itd)</div>
+                            <div class="requirement-item" data-i18n="careers.job2.req4">Osnove SQL/baza podataka</div>
+                            <div class="requirement-item" data-i18n="careers.job2.req5">Git i kontrola verzija</div>
+                            <div class="requirement-item" data-i18n="careers.job2.req6">Portfolio ili GitHub projekti</div>
                         </div>
                     </div>
 
-                    <a href="mailto:alembasic@gmail.com?subject=Application: Full-Stack Developer" class="btn-primary">Apply Now</a>
+                    <a href="mailto:alembasic@gmail.com?subject=Application: Full-Stack Developer" class="btn-primary" data-i18n="careers.job2.apply">Apliciraj Sada</a>
                 </div>
 
                 <!-- DevOps / Cloud Engineer -->
                 <div class="job-card">
                     <div class="job-header">
                         <div>
-                            <h3 class="job-title">DevOps / Cloud Engineer</h3>
+                            <h3 class="job-title" data-i18n="careers.job3.title">DevOps / Cloud Inženjer</h3>
                             <div class="job-meta">
                                 <span class="job-meta-item">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                    Sarajevo / Remote
+                                    <span data-i18n="careers.job3.location">Sarajevo / Remote</span>
                                 </span>
                                 <span class="job-meta-item">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -1034,40 +1038,40 @@
                                 </span>
                                 <span class="job-meta-item">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                                    3+ years experience
+                                    <span data-i18n="careers.job3.experience">3+ godine iskustva</span>
                                 </span>
                             </div>
                         </div>
                     </div>
 
-                    <p class="job-description">
-                        Architect and maintain HIPAA-compliant cloud infrastructure. You'll handle AWS, Kubernetes, CI/CD pipelines, and infrastructure-as-code for healthcare systems. This role is critical for our scaling phase.
+                    <p class="job-description" data-i18n="careers.job3.desc">
+                        Dizajnirajte i održavajte HIPAA-usklađenu cloud infrastrukturu. Bavit ćete se AWS-om, Kubernetesom, CI/CD pipeline-ima i infrastructure-as-code za zdravstvene sisteme. Ova uloga je ključna za našu fazu skaliranja.
                     </p>
 
                     <div class="job-details">
                         <div class="job-detail">
-                            <div class="job-detail-label">Tech Stack</div>
+                            <div class="job-detail-label" data-i18n="careers.job3.techstack.label">Tehnološki Stack</div>
                             <div class="job-detail-value">AWS, Docker, Kubernetes, Terraform, CI/CD</div>
                         </div>
                         <div class="job-detail">
-                            <div class="job-detail-label">Type</div>
-                            <div class="job-detail-value">Full-Time, Permanent</div>
+                            <div class="job-detail-label" data-i18n="careers.job3.type.label">Vrsta</div>
+                            <div class="job-detail-value" data-i18n="careers.job3.type.value">Puno radno vrijeme, Stalno</div>
                         </div>
                     </div>
 
                     <div class="job-requirements">
-                        <h4>Required Skills</h4>
+                        <h4 data-i18n="careers.job3.req.h4">Tražene Vještine</h4>
                         <div class="requirements-list">
-                            <div class="requirement-item">3+ years cloud/DevOps experience</div>
-                            <div class="requirement-item">AWS proficiency (EC2, RDS, S3)</div>
-                            <div class="requirement-item">Docker and containerization</div>
-                            <div class="requirement-item">Kubernetes basics</div>
-                            <div class="requirement-item">Infrastructure-as-Code (Terraform)</div>
-                            <div class="requirement-item">HIPAA/compliance knowledge (nice-to-have)</div>
+                            <div class="requirement-item" data-i18n="careers.job3.req1">3+ godina cloud/DevOps iskustva</div>
+                            <div class="requirement-item" data-i18n="careers.job3.req2">Poznavanje AWS-a (EC2, RDS, S3)</div>
+                            <div class="requirement-item" data-i18n="careers.job3.req3">Docker i kontejnerizacija</div>
+                            <div class="requirement-item" data-i18n="careers.job3.req4">Osnove Kubernetesa</div>
+                            <div class="requirement-item" data-i18n="careers.job3.req5">Infrastructure-as-Code (Terraform)</div>
+                            <div class="requirement-item" data-i18n="careers.job3.req6">Znanje HIPAA/usklađenosti (prednost)</div>
                         </div>
                     </div>
 
-                    <a href="mailto:alembasic@gmail.com?subject=Application: DevOps / Cloud Engineer" class="btn-primary">Apply Now</a>
+                    <a href="mailto:alembasic@gmail.com?subject=Application: DevOps / Cloud Engineer" class="btn-primary" data-i18n="careers.job3.apply">Apliciraj Sada</a>
                 </div>
             </div>
         </div>
@@ -1077,33 +1081,33 @@
     <section class="culture-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">How We Work</span>
-                <h2 class="section-title">Our Values & Culture</h2>
+                <span class="section-label" data-i18n="careers.culture.label">Kako radimo</span>
+                <h2 class="section-title" data-i18n="careers.culture.h2">Naše Vrijednosti i Kultura</h2>
             </div>
             <div class="culture-values">
                 <div class="value-item">
-                    <h4>Quality First</h4>
-                    <p>We ship solid code, not quick hacks. Code reviews, testing, documentation. We take pride in what we build.</p>
+                    <h4 data-i18n="careers.culture.v1.title">Kvalitet Prije Svega</h4>
+                    <p data-i18n="careers.culture.v1.desc">Isporučujemo solidan kod, ne brze zakrpe. Code review-i, testiranje, dokumentacija. Ponosni smo na ono što gradimo.</p>
                 </div>
                 <div class="value-item">
-                    <h4>Transparent & Honest</h4>
-                    <p>No corporate BS. Direct feedback, clear priorities, honest about challenges. We respect your intelligence.</p>
+                    <h4 data-i18n="careers.culture.v2.title">Transparentnost i Poštenje</h4>
+                    <p data-i18n="careers.culture.v2.desc">Bez korporativnog BS-a. Direktan feedback, jasni prioriteti, iskrenost o izazovima. Poštujemo vašu inteligenciju.</p>
                 </div>
                 <div class="value-item">
-                    <h4>Continuous Learning</h4>
-                    <p>Budget for courses, conferences, and tools. We grow together. Healthcare + fintech = always learning.</p>
+                    <h4 data-i18n="careers.culture.v3.title">Kontinuirano Učenje</h4>
+                    <p data-i18n="careers.culture.v3.desc">Budžet za kurseve, konferencije i alate. Rastemo zajedno. Zdravstvo + fintech = uvijek učimo.</p>
                 </div>
                 <div class="value-item">
-                    <h4>Mission-Driven</h4>
-                    <p>Our 50% to charity commitment means your work has real impact. You're building something that matters.</p>
+                    <h4 data-i18n="careers.culture.v4.title">Misijsko Orijentisani</h4>
+                    <p data-i18n="careers.culture.v4.desc">Naša obaveza od 50% za dobrotvorne znači da vaš rad ima stvarni utjecaj. Gradite nešto što je važno.</p>
                 </div>
                 <div class="value-item">
-                    <h4>Trust & Ownership</h4>
-                    <p>You own your projects. No micromanagement. We hire smart people and trust them to do great work.</p>
+                    <h4 data-i18n="careers.culture.v5.title">Povjerenje i Vlasništvo</h4>
+                    <p data-i18n="careers.culture.v5.desc">Vi ste vlasnici vaših projekata. Bez mikromenadžmenta. Zapošljavamo pametne ljude i vjerujemo im da rade odlično.</p>
                 </div>
                 <div class="value-item">
-                    <h4>Work-Life Balance</h4>
-                    <p>Remote-first, flexible hours. Respect for your time and personal life. Burnout is not a badge of honor here.</p>
+                    <h4 data-i18n="careers.culture.v6.title">Ravnoteža Posla i Privatnog</h4>
+                    <p data-i18n="careers.culture.v6.desc">Remote-first, fleksibilno radno vrijeme. Poštovanje vašeg vremena i privatnog života. Iscrpljenost ovdje nije znak časti.</p>
                 </div>
             </div>
         </div>
@@ -1113,67 +1117,67 @@
     <section class="faq-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Questions?</span>
-                <h2 class="section-title">Frequently Asked Questions</h2>
+                <span class="section-label" data-i18n="careers.faq.label">Pitanja?</span>
+                <h2 class="section-title" data-i18n="careers.faq.h2">Često Postavljana Pitanja</h2>
             </div>
             <div class="faq-grid">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Do I need healthcare experience to apply?</span>
+                        <span data-i18n="careers.faq.q1">Trebam li iskustvo u zdravstvu da apliciram?</span>
                         <div class="faq-toggle">▼</div>
                     </div>
                     <div class="faq-answer">
-                        <p>Not at all. We hire for technical skills and problem-solving ability. We'll teach you healthcare best practices, HIPAA compliance, and industry standards. Your software engineering skills transfer well.</p>
+                        <p data-i18n="careers.faq.a1">Uopće ne. Zapošljavamo na osnovu tehničkih vještina i sposobnosti rješavanja problema. Naučit ćemo vas najboljim praksama u zdravstvu, HIPAA usklađenosti i industrijskim standardima. Vaše inženjerne vještine se lako prenose.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Is remote work available?</span>
+                        <span data-i18n="careers.faq.q2">Je li dostupan remote rad?</span>
                         <div class="faq-toggle">▼</div>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, 100%. We're remote-first. We have an office in Sarajevo for those who want it, but remote is our default. Work from anywhere, as long as you can commit to 8am-5pm CET overlap for meetings.</p>
+                        <p data-i18n="careers.faq.a2">Da, 100%. Smo remote-first. Imamo ured u Sarajevu za one koji to žele, ali remote je naš standard. Radite od bilo gdje, pod uvjetom da možete osigurati preklapanje 8:00-17:00 CET za sastanke.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>What's the salary range?</span>
+                        <span data-i18n="careers.faq.q3">Koji je raspon plata?</span>
                         <div class="faq-toggle">▼</div>
                     </div>
                     <div class="faq-answer">
-                        <p>Listed in each job description. We pay above-market rates for Bosnia/region. Competitive with EU salaries. For founding team members, we offer equity/profit-sharing. Salary is transparent — no surprises.</p>
+                        <p data-i18n="careers.faq.a3">Navedeno u svakom opisu posla. Plaćamo iznad tržišnih cijena za Bosnu/regiju. Konkurentno s EU platama. Za članove osnivačkog tima nudimo kapital/dijeljenje profita. Plate su transparentne — bez iznenađenja.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>What's the hiring process?</span>
+                        <span data-i18n="careers.faq.q4">Kakav je proces zapošljavanja?</span>
                         <div class="faq-toggle">▼</div>
                     </div>
                     <div class="faq-answer">
-                        <p>Quick and respectful: 1) Phone screening (30 min) 2) Technical assignment (take-home, realistic) 3) Technical interview (90 min) 4) Culture fit conversation. Total time: 1-2 weeks. We move fast.</p>
+                        <p data-i18n="careers.faq.a4">Brz i respektabilan: 1) Telefonski razgovor (30 min) 2) Tehnički zadatak (kod kuće, realan) 3) Tehnički intervju (90 min) 4) Razgovor o kulturi. Ukupno: 1-2 sedmice. Brzo se krećemo.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Do you offer benefits?</span>
+                        <span data-i18n="careers.faq.q5">Nudite li beneficije?</span>
                         <div class="faq-toggle">▼</div>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes. Health insurance (we cover 100%), laptop/equipment budget, professional development budget, flexible hours, unlimited PTO (within reason). We're still a startup, but we take care of our team.</p>
+                        <p data-i18n="careers.faq.a5">Da. Zdravstveno osiguranje (pokrivamo 100%), budžet za laptop/opremu, budžet za profesionalni razvoj, fleksibilno radno vrijeme, neograničen godišnji odmor (razumno). Još smo startup, ali brinemo o timu.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>How long are projects?</span>
+                        <span data-i18n="careers.faq.q6">Koliko dugo traju projekti?</span>
                         <div class="faq-toggle">▼</div>
                     </div>
                     <div class="faq-answer">
-                        <p>Usually 6-18 months per major project. Our healthcare platform is our main focus. We're not jumping between clients every month. You'll have continuity and deep knowledge of what you're building.</p>
+                        <p data-i18n="careers.faq.a6">Obično 6-18 mjeseci po velikom projektu. Naša zdravstvena platforma je naš glavni fokus. Ne skačemo između klijenata svaki mjesec. Imat ćete kontinuitet i duboko znanje o onome što gradite.</p>
                     </div>
                 </div>
             </div>
@@ -1183,11 +1187,11 @@
     <!-- Call to Action -->
     <section class="careers-cta">
         <div class="container">
-            <h3>Ready to Build Something Meaningful?</h3>
-            <p>Send your CV, portfolio, and a note about why you're interested. We'll be in touch within 48 hours.</p>
-            <a href="mailto:alembasic@gmail.com" class="btn-primary">Apply Now</a>
+            <h3 data-i18n="careers.cta.h3">Spremni da Izgradite Nešto Smisleno?</h3>
+            <p data-i18n="careers.cta.desc">Pošaljite CV, portfolio i kratku napomenu o tome zašto ste zainteresovani. Javit ćemo se unutar 48 sati.</p>
+            <a href="mailto:alembasic@gmail.com" class="btn-primary" data-i18n="careers.cta.btn">Apliciraj Sada</a>
             <p style="margin-top: 2rem; font-size: 0.9375rem;">
-                Or questions? <a href="mailto:alembasic@gmail.com" class="email-link">Email us</a>
+                <span data-i18n="careers.cta.questions">Ili pitanja?</span> <a href="mailto:alembasic@gmail.com" class="email-link" data-i18n="careers.cta.email">Pišite nam</a>
             </p>
         </div>
     </section>
@@ -1200,31 +1204,31 @@
                     <div class="logo-mark">S</div>
                     Snow<span>IT</span>
                 </a>
-                <p class="footer-tagline">Enterprise IT solutions from the Balkans. Healthcare-grade reliability. Modern engineering.</p>
+                <p class="footer-tagline" data-i18n="footer.tagline">Enterprise IT rješenja iz Balkana. Pouzdanost na nivou zdravstvene industrije. Moderno inženjerstvo.</p>
             </div>
             <div class="footer-links">
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h4 data-i18n="footer.services">Usluge</h4>
                     <ul>
-                        <li><a href="index.html#features">Healthcare Systems</a></li>
-                        <li><a href="index.html#features">Enterprise Integration</a></li>
-                        <li><a href="index.html#features">Cloud Infrastructure</a></li>
+                        <li><a href="index.html#features" data-i18n="footer.services.healthcare">Zdravstveni Sistemi</a></li>
+                        <li><a href="index.html#features" data-i18n="footer.services.enterprise">Enterprise Integracija</a></li>
+                        <li><a href="index.html#features" data-i18n="footer.services.cloud">Cloud Infrastruktura</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Company</h4>
+                    <h4 data-i18n="footer.company">Kompanija</h4>
                     <ul>
-                        <li><a href="index.html#about">About Us</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="index.html#about" data-i18n="footer.company.about">O Nama</a></li>
+                        <li><a href="portfolio.html" data-i18n="footer.company.portfolio">Portfolio</a></li>
+                        <li><a href="careers.html" data-i18n="footer.company.careers">Karijere</a></li>
+                        <li><a href="index.html#contact" data-i18n="footer.company.contact">Kontakt</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 SnowIT. All rights reserved.</p>
-            <p class="footer-credit">Led by Asmir Merdzanovic</p>
+            <p data-i18n="footer.copyright">© 2026 SnowIT. Sva prava zadržana.</p>
+            <p class="footer-credit" data-i18n="footer.credit">Vodi Asmir Merdžanović</p>
         </div>
     </footer>
 
@@ -1236,5 +1240,6 @@
             });
         });
     </script>
+    <script src="i18n.js"></script>
 </body>
 </html>

@@ -146,142 +146,146 @@
     <nav>
         <a href="index.html" class="logo"><img src="logo-512.png" alt="SnowIT" class="logo-img">Snow<span>IT</span></a>
         <ul class="nav-links">
-            <li><a href="index.html#features">Services</a></li>
-            <li><a href="usluge.html" class="active">Usluge</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.html#features" data-i18n="nav.services">Usluge</a></li>
+            <li><a href="usluge.html" class="active" data-i18n="nav.usluge">Usluge</a></li>
+            <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+            <li><a href="careers.html" data-i18n="nav.careers">Karijere</a></li>
+            <li><a href="index.html#contact" data-i18n="nav.contact">Kontakt</a></li>
         </ul>
-        <a href="#" class="nav-cta" data-contact="quote">Get Quote</a>
+        <div class="lang-toggle">
+            <button class="lang-toggle-btn" data-lang="bs">BS</button>
+            <button class="lang-toggle-btn" data-lang="en">EN</button>
+        </div>
+        <a href="#" class="nav-cta" data-contact="quote" data-i18n="nav.cta">Upit</a>
         <button class="mobile-menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </nav>
     <section class="hero">
-        <span class="hero-badge">Digitalna transformacija</span>
-        <h1>Lansiranje vašeg <span class="highlight">digitalnog prisustva</span></h1>
-        <p class="hero-subtitle">Web stranica, LinkedIn, email — sve što vam treba da započnete online. Profesionalno. Brzo. Pristupačno.</p>
+        <span class="hero-badge" data-i18n="usluge.hero.badge">Digitalna transformacija</span>
+        <h1 data-i18n-html="usluge.hero.h1">Lansiranje vašeg <span class="highlight">digitalnog prisustva</span></h1>
+        <p class="hero-subtitle" data-i18n="usluge.hero.subtitle">Web stranica, LinkedIn, email — sve što vam treba da započnete online. Profesionalno. Brzo. Pristupačno.</p>
         <div class="hero-stats">
-            <div class="hero-stat"><span class="hero-stat-value">10+ godina</span><span class="hero-stat-label">Iskustva</span></div>
-            <div class="hero-stat"><span class="hero-stat-value">15+ inženjera</span><span class="hero-stat-label">Tim eksperata</span></div>
+            <div class="hero-stat"><span class="hero-stat-value" data-i18n="usluge.hero.stat1.value">10+ godina</span><span class="hero-stat-label" data-i18n="usluge.hero.stat1.label">Iskustva</span></div>
+            <div class="hero-stat"><span class="hero-stat-value" data-i18n="usluge.hero.stat2.value">15+ inženjera</span><span class="hero-stat-label" data-i18n="usluge.hero.stat2.label">Tim eksperata</span></div>
         </div>
     </section>
     <section class="ai-services" id="ai-usluge">
         <div class="ai-services-header">
-            <span class="section-label">Napredne usluge</span>
-            <h2>AI Usluge</h2>
-            <p>Enterprise AI sigurnost i infrastruktura za organizacije koje grade ili deployuju AI sisteme u produkciji.</p>
+            <span class="section-label" data-i18n="usluge.ai.label">Napredne usluge</span>
+            <h2 data-i18n="usluge.ai.h2">AI Usluge</h2>
+            <p data-i18n="usluge.ai.desc">Enterprise AI sigurnost i infrastruktura za organizacije koje grade ili deployuju AI sisteme u produkciji.</p>
         </div>
         <div class="ai-services-grid">
             <div class="ai-card">
-                <span class="ai-badge">AI Sigurnost</span>
-                <h3 class="pricing-name">Agentna sigurnost</h3>
-                <p class="pricing-description">Procjena prijetnji, testiranje prompt injection napada i zaštita AI agentnih sistema. Osiguravamo vaše AI deployment rješenja prije nego napadači pronađu ranjivosti.</p>
+                <span class="ai-badge" data-i18n="usluge.ai.card1.badge">AI Sigurnost</span>
+                <h3 class="pricing-name" data-i18n="usluge.ai.card1.title">Agentna sigurnost</h3>
+                <p class="pricing-description" data-i18n="usluge.ai.card1.desc">Procjena prijetnji, testiranje prompt injection napada i zaštita AI agentnih sistema. Osiguravamo vaše AI deployment rješenja prije nego napadači pronađu ranjivosti.</p>
                 <ul class="pricing-features">
-                    <li>Threat modeling za AI sisteme</li>
-                    <li>Prompt injection testiranje</li>
-                    <li>Pregled privilegija i dozvola</li>
-                    <li>Preporuke za hardening</li>
+                    <li data-i18n="usluge.ai.card1.li1">Threat modeling za AI sisteme</li>
+                    <li data-i18n="usluge.ai.card1.li2">Prompt injection testiranje</li>
+                    <li data-i18n="usluge.ai.card1.li3">Pregled privilegija i dozvola</li>
+                    <li data-i18n="usluge.ai.card1.li4">Preporuke za hardening</li>
                 </ul>
-                <a href="#" class="pricing-cta" data-contact="agentna-sigurnost">Kontaktiraj nas<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                <a href="#" class="pricing-cta" data-contact="agentna-sigurnost" data-i18n="usluge.ai.card1.cta">Kontaktiraj nas<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
             </div>
             <div class="ai-card">
-                <span class="ai-badge">AI Infrastruktura</span>
-                <h3 class="pricing-name">AI Harness Engineering</h3>
-                <p class="pricing-description">Dizajn i implementacija produkcijskih AI agent harnessa — multi-model ruting, orkestrator hijerarhije, deterministički alati i horizontalno skaliranje timova.</p>
+                <span class="ai-badge" data-i18n="usluge.ai.card2.badge">AI Infrastruktura</span>
+                <h3 class="pricing-name" data-i18n="usluge.ai.card2.title">AI Harness Engineering</h3>
+                <p class="pricing-description" data-i18n="usluge.ai.card2.desc">Dizajn i implementacija produkcijskih AI agent harnessa — multi-model ruting, orkestrator hijerarhije, deterministički alati i horizontalno skaliranje timova.</p>
                 <ul class="pricing-features">
-                    <li>Arhitektura agent harnessa</li>
-                    <li>Multi-model ruting (cijena/kapacitet)</li>
-                    <li>Orkestracija timova agenata</li>
-                    <li>RAG/LightRAG integracija</li>
+                    <li data-i18n="usluge.ai.card2.li1">Arhitektura agent harnessa</li>
+                    <li data-i18n="usluge.ai.card2.li2">Multi-model ruting (cijena/kapacitet)</li>
+                    <li data-i18n="usluge.ai.card2.li3">Orkestracija timova agenata</li>
+                    <li data-i18n="usluge.ai.card2.li4">RAG/LightRAG integracija</li>
                 </ul>
-                <a href="#" class="pricing-cta" data-contact="ai-harness">Kontaktiraj nas<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                <a href="#" class="pricing-cta" data-contact="ai-harness" data-i18n="usluge.ai.card2.cta">Kontaktiraj nas<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
             </div>
         </div>
     </section>
     <section class="pricing" id="pricing">
         <div class="pricing-header">
-            <span class="section-label">Naši paketi</span>
-            <h2>Odaberite pravi paket za vas</h2>
-            <p>Transparentne cijene. Bez skrivenih troškova. Sve uključeno.</p>
+            <span class="section-label" data-i18n="usluge.pricing.label">Naši paketi</span>
+            <h2 data-i18n="usluge.pricing.h2">Odaberite pravi paket za vas</h2>
+            <p data-i18n="usluge.pricing.desc">Transparentne cijene. Bez skrivenih troškova. Sve uključeno.</p>
         </div>
         <div class="pricing-grid">
             <div class="pricing-card">
-                <h3 class="pricing-name">Digital Presence</h3>
-                <p class="pricing-description">Osnovna online prisutnost — web stranica, logo, email setup.</p>
+                <h3 class="pricing-name" data-i18n="usluge.pricing.card1.name">Digital Presence</h3>
+                <p class="pricing-description" data-i18n="usluge.pricing.card1.desc">Osnovna online prisutnost — web stranica, logo, email setup.</p>
                 <div class="pricing-price"><span class="price-amount">800</span><span class="price-currency">BAM</span></div>
-                <p class="price-subtext">≈ EUR 400 | 3-5 dana isporuke</p>
+                <p class="price-subtext" data-i18n="usluge.pricing.card1.subtext">≈ EUR 400 | 3-5 dana isporuke</p>
                 <ul class="pricing-features">
-                    <li>Moderna web stranica (5-10 stranica)</li>
-                    <li>Profesionalan logo dizajn</li>
-                    <li>Email setup (yourname@domain.ba)</li>
-                    <li>DNS & SSL konfiguracija</li>
-                    <li>Hosting uključen (1 godina)</li>
+                    <li data-i18n="usluge.pricing.card1.li1">Moderna web stranica (5-10 stranica)</li>
+                    <li data-i18n="usluge.pricing.card1.li2">Profesionalan logo dizajn</li>
+                    <li data-i18n="usluge.pricing.card1.li3">Email setup (yourname@domain.ba)</li>
+                    <li data-i18n="usluge.pricing.card1.li4">DNS & SSL konfiguracija</li>
+                    <li data-i18n="usluge.pricing.card1.li5">Hosting uključen (1 godina)</li>
                 </ul>
-                <a href="#" class="pricing-cta" data-contact="digital-presence">Kontaktiraj nas<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                <a href="#" class="pricing-cta" data-contact="digital-presence" data-i18n="usluge.pricing.card1.cta">Kontaktiraj nas<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
             </div>
             <div class="pricing-card">
-                <h3 class="pricing-name">LinkedIn Launch</h3>
-                <p class="pricing-description">Profesionalna LinkedIn prisutnost sa inicijalnim content planom.</p>
+                <h3 class="pricing-name" data-i18n="usluge.pricing.card2.name">LinkedIn Launch</h3>
+                <p class="pricing-description" data-i18n="usluge.pricing.card2.desc">Profesionalna LinkedIn prisutnost sa inicijalnim content planom.</p>
                 <div class="pricing-price"><span class="price-amount">500</span><span class="price-currency">BAM</span></div>
-                <p class="price-subtext">≈ EUR 250 | 2-3 dana isporuke</p>
+                <p class="price-subtext" data-i18n="usluge.pricing.card2.subtext">≈ EUR 250 | 2-3 dana isporuke</p>
                 <ul class="pricing-features">
-                    <li>Company page kreiranje & setup</li>
-                    <li>Profesionalan banner dizajn</li>
-                    <li>5 inicijalnih postova (grafike + tekst)</li>
-                    <li>SEO optimizacija profila</li>
-                    <li>Posting raspored & upustva</li>
+                    <li data-i18n="usluge.pricing.card2.li1">Company page kreiranje & setup</li>
+                    <li data-i18n="usluge.pricing.card2.li2">Profesionalan banner dizajn</li>
+                    <li data-i18n="usluge.pricing.card2.li3">5 inicijalnih postova (grafike + tekst)</li>
+                    <li data-i18n="usluge.pricing.card2.li4">SEO optimizacija profila</li>
+                    <li data-i18n="usluge.pricing.card2.li5">Posting raspored & upustva</li>
                 </ul>
-                <a href="#" class="pricing-cta" data-contact="linkedin-launch">Kontaktiraj nas<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                <a href="#" class="pricing-cta" data-contact="linkedin-launch" data-i18n="usluge.pricing.card2.cta">Kontaktiraj nas<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
             </div>
             <div class="pricing-card featured">
-                <span class="pricing-badge">Najpopularniji</span>
-                <h3 class="pricing-name">Full Digital Start</h3>
-                <p class="pricing-description">Kompletan digitalni start — web, LinkedIn, Google, sve u jednom.</p>
+                <span class="pricing-badge" data-i18n="usluge.pricing.card3.badge">Najpopularniji</span>
+                <h3 class="pricing-name" data-i18n="usluge.pricing.card3.name">Full Digital Start</h3>
+                <p class="pricing-description" data-i18n="usluge.pricing.card3.desc">Kompletan digitalni start — web, LinkedIn, Google, sve u jednom.</p>
                 <div class="pricing-price"><span class="price-amount">1200</span><span class="price-currency">BAM</span></div>
-                <p class="price-subtext">≈ EUR 600 | 5-7 dana isporuke</p>
+                <p class="price-subtext" data-i18n="usluge.pricing.card3.subtext">≈ EUR 600 | 5-7 dana isporuke</p>
                 <ul class="pricing-features">
-                    <li><strong>SVE iz Digital Presence paketa</strong></li>
-                    <li><strong>SVE iz LinkedIn Launch paketa</strong></li>
-                    <li>Google Business Profile setup</li>
-                    <li>Google Maps & SEO optimizacija</li>
-                    <li>30 dana tehničke podrške</li>
-                    <li>Mjesečni SEO report (prvi mjesec)</li>
+                    <li data-i18n-html="usluge.pricing.card3.li1"><strong>SVE iz Digital Presence paketa</strong></li>
+                    <li data-i18n-html="usluge.pricing.card3.li2"><strong>SVE iz LinkedIn Launch paketa</strong></li>
+                    <li data-i18n="usluge.pricing.card3.li3">Google Business Profile setup</li>
+                    <li data-i18n="usluge.pricing.card3.li4">Google Maps & SEO optimizacija</li>
+                    <li data-i18n="usluge.pricing.card3.li5">30 dana tehničke podrške</li>
+                    <li data-i18n="usluge.pricing.card3.li6">Mjesečni SEO report (prvi mjesec)</li>
                 </ul>
-                <a href="#" class="pricing-cta" data-contact="full-digital-start">Započni sada<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                <a href="#" class="pricing-cta" data-contact="full-digital-start" data-i18n="usluge.pricing.card3.cta">Započni sada<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
             </div>
         </div>
     </section>
     <section class="process">
         <div class="process-header">
-            <span class="section-label">Kako funkcioniše</span>
-            <h2>Jednostavan proces u 3 koraka</h2>
+            <span class="section-label" data-i18n="usluge.process.label">Kako funkcioniše</span>
+            <h2 data-i18n="usluge.process.h2">Jednostavan proces u 3 koraka</h2>
         </div>
         <div class="process-grid">
-            <div class="process-step"><div class="process-number">1</div><h3 class="process-title">Razgovor</h3><p class="process-description">Pošaljite upit, odgovaramo odmah. Razgovaramo o vašim potrebama i ciljevima. Definišemo scope projekta.</p></div>
-            <div class="process-step"><div class="process-number">2</div><h3 class="process-title">Izrada</h3><p class="process-description">Naš tim razvija sve elemente vašeg digitalnog prisustva. Transparentan proces sa redovnim update-ima.</p></div>
-            <div class="process-step"><div class="process-number">3</div><h3 class="process-title">Lansiranje</h3><p class="process-description">Pregled, revizije, finalizacija. Lansiranje vašeg digitalnog prisustva uz kompletnu dokumentaciju i podršku.</p></div>
+            <div class="process-step"><div class="process-number">1</div><h3 class="process-title" data-i18n="usluge.process.step1.title">Razgovor</h3><p class="process-description" data-i18n="usluge.process.step1.desc">Pošaljite upit, odgovaramo odmah. Razgovaramo o vašim potrebama i ciljevima. Definišemo scope projekta.</p></div>
+            <div class="process-step"><div class="process-number">2</div><h3 class="process-title" data-i18n="usluge.process.step2.title">Izrada</h3><p class="process-description" data-i18n="usluge.process.step2.desc">Naš tim razvija sve elemente vašeg digitalnog prisustva. Transparentan proces sa redovnim update-ima.</p></div>
+            <div class="process-step"><div class="process-number">3</div><h3 class="process-title" data-i18n="usluge.process.step3.title">Lansiranje</h3><p class="process-description" data-i18n="usluge.process.step3.desc">Pregled, revizije, finalizacija. Lansiranje vašeg digitalnog prisustva uz kompletnu dokumentaciju i podršku.</p></div>
         </div>
     </section>
     <section class="cta">
         <div class="cta-content">
-            <h2>Spremni za digitalni start?</h2>
-            <p class="cta-description">Kontaktirajte nas danas i započnite vašu digitalnu transformaciju. Besplatna konsultacija za sve nove klijente.</p>
-            <a href="#" class="cta-button" data-contact="consultation">Kontaktirajte nas<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+            <h2 data-i18n="usluge.cta.h2">Spremni za digitalni start?</h2>
+            <p class="cta-description" data-i18n="usluge.cta.desc">Kontaktirajte nas danas i započnite vašu digitalnu transformaciju. Besplatna konsultacija za sve nove klijente.</p>
+            <a href="#" class="cta-button" data-contact="consultation"><span data-i18n="usluge.cta.btn">Kontaktirajte nas</span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
         </div>
     </section>
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
                 <a href="index.html" class="logo"><img src="logo-512.png" alt="SnowIT" class="logo-img">Snow<span>IT</span></a>
-                <p class="footer-tagline">Enterprise IT solutions from the Balkans. Healthcare-grade reliability. Modern engineering.</p>
+                <p class="footer-tagline" data-i18n="footer.tagline">Enterprise IT rješenja iz Balkana. Pouzdanost na nivou zdravstvene industrije. Moderno inženjerstvo.</p>
             </div>
             <div class="footer-links">
-                <div class="footer-section"><h4>Services</h4><ul><li><a href="index.html#features">Healthcare Systems</a></li><li><a href="index.html#features">Enterprise Integration</a></li><li><a href="index.html#features">Cloud Infrastructure</a></li><li><a href="usluge.html">Usluge (BA)</a></li></ul></div>
-                <div class="footer-section"><h4>Company</h4><ul><li><a href="index.html#about">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="careers.html">Careers</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+                <div class="footer-section"><h4 data-i18n="footer.services">Usluge</h4><ul><li><a href="index.html#features" data-i18n="footer.services.healthcare">Zdravstveni Sistemi</a></li><li><a href="index.html#features" data-i18n="footer.services.enterprise">Enterprise Integracija</a></li><li><a href="index.html#features" data-i18n="footer.services.cloud">Cloud Infrastruktura</a></li><li><a href="usluge.html" data-i18n="usluge.footer.services.usluge">Usluge (BA)</a></li></ul></div>
+                <div class="footer-section"><h4 data-i18n="footer.company">Kompanija</h4><ul><li><a href="index.html#about" data-i18n="footer.company.about">O Nama</a></li><li><a href="portfolio.html" data-i18n="footer.company.portfolio">Portfolio</a></li><li><a href="careers.html" data-i18n="footer.company.careers">Karijere</a></li><li><a href="index.html#contact" data-i18n="footer.company.contact">Kontakt</a></li></ul></div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 SnowIT. All rights reserved.</p>
-            <p class="footer-credit">Led by Asmir Merdžanović</p>
+            <p data-i18n="footer.copyright">© 2026 SnowIT. Sva prava zadržana.</p>
+            <p class="footer-credit" data-i18n="footer.credit">Vodi Asmir Merdžanović</p>
         </div>
     </footer>
     <script>
@@ -289,5 +293,6 @@
         document.querySelectorAll('[data-contact]').forEach(link=>{link.addEventListener('click',(e)=>{e.preventDefault();const packageType=e.currentTarget.dataset.contact;let subject,body;switch(packageType){case'digital-presence':subject='Upit: Digital Presence paket';body='Ime:\nKompanija:\nTelefon:\n\nŽelim više informacija o Digital Presence paketu.';break;case'linkedin-launch':subject='Upit: LinkedIn Launch paket';body='Ime:\nKompanija:\nTelefon:\n\nŽelim više informacija o LinkedIn Launch paketu.';break;case'full-digital-start':subject='Upit: Full Digital Start paket';body='Ime:\nKompanija:\nTelefon:\n\nŽelim više informacija o Full Digital Start paketu.';break;case'agentna-sigurnost':subject='Upit: Agentna sigurnost';body='Ime:\nKompanija:\nTelefon:\n\nŽelim više informacija o usluzi Agentna sigurnost.';break;case'ai-harness':subject='Upit: AI Harness Engineering';body='Ime:\nKompanija:\nTelefon:\n\nŽelim više informacija o usluzi AI Harness Engineering.';break;case'consultation':subject='Upit: Digitalna transformacija';body='Ime:\nKompanija:\nTelefon:\n\nŽelim besplatnu konsultaciju.';break;default:subject='Upit sa snowit.ba';body='Ime:\nKompanija:\nTelefon:\n\nPoruka:';}
         window.location.href=`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;});});
     </script>
+    <script src="i18n.js"></script>
 </body>
 </html>
