@@ -103,6 +103,26 @@
         .footer-bottom p { color: var(--color-text-muted); font-size: 0.875rem; margin: 0; }
         .footer-credit { font-style: italic; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .starter-offer { padding: 5rem 2rem 2rem; position: relative; z-index: 1; }
+        .starter-inner { max-width: 900px; margin: 0 auto; background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(255, 107, 53, 0.08)); border: 2px solid var(--color-cyan); border-radius: 16px; padding: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .starter-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-cyan); padding: 0.4rem 1rem; background: rgba(0, 212, 255, 0.1); border: 1px solid rgba(0, 212, 255, 0.4); border-radius: 4px; margin-bottom: 1.25rem; }
+        .starter-badge::before { content: '#1'; font-weight: 700; color: var(--color-orange); margin-right: 0.25rem; }
+        .starter-title { font-family: var(--font-primary); font-size: 2rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 1rem; line-height: 1.2; }
+        .starter-title span { color: var(--color-cyan); }
+        .starter-desc { font-size: 1rem; color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
+        .starter-pitch { font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-muted); background: rgba(0,0,0,0.3); border-left: 3px solid var(--color-orange); padding: 1rem 1.25rem; border-radius: 0 6px 6px 0; margin-bottom: 1.5rem; font-style: italic; }
+        .starter-right { display: flex; flex-direction: column; gap: 1.25rem; }
+        .starter-price-box { background: rgba(0,0,0,0.3); border: 1px solid var(--color-border); border-radius: 10px; padding: 1.5rem; text-align: center; }
+        .starter-price-label { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-muted); margin-bottom: 0.5rem; }
+        .starter-price-amount { font-family: var(--font-mono); font-size: 2.5rem; font-weight: 700; color: var(--color-cyan); }
+        .starter-price-suffix { font-family: var(--font-mono); font-size: 0.875rem; color: var(--color-text-muted); margin-top: 0.25rem; }
+        .starter-features { list-style: none; padding: 0; }
+        .starter-features li { font-size: 0.9375rem; color: var(--color-text-secondary); margin-bottom: 0.6rem; padding-left: 1.5rem; position: relative; }
+        .starter-features li::before { content: '✓'; position: absolute; left: 0; color: var(--color-cyan); font-weight: 700; }
+        .starter-cta { width: 100%; font-family: var(--font-primary); font-size: 1rem; font-weight: 700; padding: 1.1rem 2rem; background: var(--color-cyan); color: var(--color-navy); border: none; border-radius: 8px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.05em; }
+        .starter-cta:hover { background: transparent; color: var(--color-cyan); box-shadow: 0 0 30px rgba(0,212,255,0.3); border: 2px solid var(--color-cyan); }
+        .starter-delivery { text-align: center; font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.75rem; }
+        @media (max-width: 768px) { .starter-inner { grid-template-columns: 1fr; gap: 2rem; } }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
         @media (max-width: 1024px) {
             .pricing-grid { grid-template-columns: 1fr; max-width: 500px; }
@@ -200,6 +220,42 @@
             </div>
         </div>
     </section>
+    <section class="starter-offer" id="google-business">
+        <div class="starter-inner">
+            <div>
+                <span class="starter-badge">Preporučujemo za početak</span>
+                <h2 class="starter-title">Budite na <span>Google Mapama</span> za 3 dana</h2>
+                <p class="starter-desc">
+                    Kad neko ukuca "frizeri Sarajevo" ili "automehaničar Ilidža" — ko se prikaže, taj dobije poziv.
+                    Vaša konkurencija je već tamo. Vi još niste.
+                </p>
+                <p class="starter-pitch">
+                    "Uglavnom mi dolaze klijenti preporukom." — Odlično. Ali znate li koliko klijenata vas potraži na Google-u i ne nađe vas? Oni odu konkurenciji.
+                </p>
+                <ul class="starter-features">
+                    <li>Google Business Profile kreiranje & verifikacija</li>
+                    <li>Vaša firma na Google Maps sa tačnom lokacijom</li>
+                    <li>Radno vrijeme, broj telefona, fotografije</li>
+                    <li>Opis firme optimiziran za pretragu</li>
+                    <li>Klijenti vas mogu direktno pozvati iz Googlea</li>
+                    <li>Osnovna SEO optimizacija za lokalno tržište</li>
+                </ul>
+            </div>
+            <div class="starter-right">
+                <div class="starter-price-box">
+                    <p class="starter-price-label">Cijena usluge</p>
+                    <p class="starter-price-amount">150 – 300 KM</p>
+                    <p class="starter-price-suffix">jednokratno, bez skrivenih troškova</p>
+                </div>
+                <a href="mailto:info@snowit.ba?subject=Google Business Setup&body=Zdravo, zanima me Google Business Setup usluga." class="starter-cta">
+                    Nazovite nas danas
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+                <p class="starter-delivery">Isporuka: 2-3 radna dana &nbsp;·&nbsp; info@snowit.ba</p>
+            </div>
+        </div>
+    </section>
+
     <section class="pricing" id="pricing">
         <div class="pricing-header">
             <span class="section-label" data-i18n="usluge.pricing.label">Naši paketi</span>
