@@ -1,0 +1,40 @@
+# SnowIT Infrastructure Configuration
+# Copy this file to terraform.tfvars and fill in your values
+
+# AWS Configuration
+aws_region  = "eu-central-1"
+environment = "production"
+domain_name = "snowit.ba"
+
+# Network Configuration
+vpc_cidr             = "10.0.0.0/16"
+public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24"]
+private_subnet_cidrs = ["10.0.11.0/24", "10.0.12.0/24"]
+
+# Security - IMPORTANT: Restrict to your office/home IP for production
+allowed_ssh_ips = [
+  "0.0.0.0/0" # CHANGE THIS to your specific IP address(es)
+]
+
+# EC2 Configuration
+instance_type_micro = "t3.micro"
+instance_type_small = "t3.small"
+key_pair_name       = "snowit-deploy-key"
+
+# SES Email Configuration
+ses_emails = [
+  "info@snowit.ba",
+  "enis@snowit.ba"
+]
+
+# S3 Archive Lifecycle
+s3_archive_lifecycle_glacier_days = 90
+
+# Database Passwords (generate with: openssl rand -base64 32)
+bookstack_db_password = "GENERATE_SECURE_PASSWORD"
+planka_db_password    = "GENERATE_SECURE_PASSWORD"
+documenso_db_password = "GENERATE_SECURE_PASSWORD"
+
+# Documenso Encryption Keys (generate with: openssl rand -base64 32)
+documenso_encryption_key = "GENERATE_SECURE_KEY"
+documenso_secondary_key  = "GENERATE_SECURE_KEY"
