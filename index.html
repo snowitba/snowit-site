@@ -1338,7 +1338,13 @@
                     <label for="message"><span data-i18n="index.contact.label.message">Poruka</span> <span class="required">*</span></label>
                     <textarea id="message" name="message" rows="5" required placeholder="Recite nam o vašem projektu..." data-i18n-placeholder="index.contact.placeholder.message"></textarea>
                 </div>
-                <button type="submit" class="btn-primary">
+                <!-- Honeypot — must remain empty, bots fill it -->
+                <div style="position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;" aria-hidden="true">
+                    <input type="text" name="_honey" id="_honey" tabindex="-1" autocomplete="off">
+                </div>
+                <!-- Form status messages -->
+                <div id="formStatus" style="display:none;padding:0.875rem 1rem;border-radius:6px;margin-bottom:1rem;font-family:var(--font-primary);font-size:0.9375rem;"></div>
+                <button type="submit" class="btn-primary" id="submitBtn">
                     <span data-i18n="index.contact.btn.send">Pošalji Poruku</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -1404,63 +1410,96 @@
             });
         });
 
-        // Contact form handler
+        // Contact form — sends via serverless API, no mailto: dependency
+        const CONTACT_ENDPOINT = 'https://snowit-site.vercel.app/api/contact';
+
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
+            contactForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
 
-                const name = document.getElementById('name').value.trim();
-                const email = document.getElementById('email').value.trim();
+                const name    = document.getElementById('name').value.trim();
+                const email   = document.getElementById('email').value.trim();
                 const company = document.getElementById('company').value.trim();
                 const message = document.getElementById('message').value.trim();
+                const honey   = document.getElementById('_honey').value;
 
-                // Simple validation
+                const statusEl = document.getElementById('formStatus');
+                const submitBtn = document.getElementById('submitBtn');
+
+                // Client-side validation
                 if (!name || !email || !message) {
-                    // Highlight empty required fields
                     if (!name) document.getElementById('name').focus();
                     else if (!email) document.getElementById('email').focus();
-                    else if (!message) document.getElementById('message').focus();
+                    else document.getElementById('message').focus();
                     return;
                 }
 
-                // Email validation
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailRegex.test(email)) {
                     document.getElementById('email').focus();
                     return;
                 }
 
-                const subject = `SnowIT Inquiry: ${name}${company ? ' - ' + company : ''}`;
-                const body = `Name: ${name}
-Email: ${email}
-Company: ${company || 'Not specified'}
-
-Message:
-${message}
-
----
-Sent via SnowIT Contact Form`;
-
-                window.location.href = `mailto:info@snowit.ba?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-                // Show success message
-                const btn = contactForm.querySelector('button');
-                const originalHTML = btn.innerHTML;
-                btn.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                // Disable button while sending
+                const originalHTML = submitBtn.innerHTML;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18" style="animation:spin 1s linear infinite">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                     </svg>
-                    Opening email client...
+                    <span>Slanje...</span>
                 `;
-                btn.disabled = true;
 
-                setTimeout(() => {
-                    btn.innerHTML = originalHTML;
-                    btn.disabled = false;
-                }, 3000);
+                try {
+                    const resp = await fetch(CONTACT_ENDPOINT, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, email, company, message, _honey: honey })
+                    });
+
+                    const data = await resp.json().catch(() => ({}));
+
+                    if (resp.ok && data.ok) {
+                        // Success
+                        statusEl.style.display = 'block';
+                        statusEl.style.background = 'rgba(0, 212, 100, 0.1)';
+                        statusEl.style.border = '1px solid rgba(0, 212, 100, 0.4)';
+                        statusEl.style.color = '#00d464';
+                        statusEl.textContent = 'Hvala! Vaša poruka je uspješno poslana. Javit ćemo vam se uskoro.';
+                        contactForm.reset();
+                        submitBtn.innerHTML = `
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="18" height="18">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Poslano!</span>
+                        `;
+                        setTimeout(() => {
+                            submitBtn.innerHTML = originalHTML;
+                            submitBtn.disabled = false;
+                            statusEl.style.display = 'none';
+                        }, 5000);
+                    } else {
+                        throw new Error(data.error || `Server error ${resp.status}`);
+                    }
+                } catch (err) {
+                    // Error state
+                    statusEl.style.display = 'block';
+                    statusEl.style.background = 'rgba(255, 80, 80, 0.1)';
+                    statusEl.style.border = '1px solid rgba(255, 80, 80, 0.4)';
+                    statusEl.style.color = '#ff5050';
+                    statusEl.innerHTML = `Greška pri slanju. Molimo pokušajte ponovo ili nas kontaktirajte direktno na <a href="mailto:info@snowit.ba" style="color:inherit">info@snowit.ba</a>.`;
+                    submitBtn.innerHTML = originalHTML;
+                    submitBtn.disabled = false;
+                    console.error('Contact form error:', err.message);
+                }
             });
         }
+
+        // Spinner animation
+        const spinStyle = document.createElement('style');
+        spinStyle.textContent = '@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }';
+        document.head.appendChild(spinStyle);
     </script>
     <script src="i18n.js"></script>
 </body>
