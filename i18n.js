@@ -71,7 +71,7 @@ const SNOWIT_TRANSLATIONS = {
         // Footer
         'footer.tagline': 'Digitalno prisustvo za male biznise u BiH. Google Business profil, web stranica, SEO. Od 200 EUR.',
         'footer.services': 'Usluge',
-        'footer.services.healthcare': 'Google Business',
+        'footer.services.gmb': 'Google Business',
         'footer.services.enterprise': 'Web Stranica',
         'footer.services.cloud': 'SEO Optimizacija',
         'footer.company': 'Kompanija',
@@ -386,7 +386,7 @@ const SNOWIT_TRANSLATIONS = {
         // Footer
         'footer.tagline': 'Digital presence for small businesses in BiH. Google Business profile, website, SEO. From 200 EUR.',
         'footer.services': 'Services',
-        'footer.services.healthcare': 'Google Business',
+        'footer.services.gmb': 'Google Business',
         'footer.services.enterprise': 'Website',
         'footer.services.cloud': 'SEO Optimization',
         'footer.company': 'Company',
