@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Business za Kafice — SnowIT</title>
+    <link rel="canonical" href="https://snowit.ba/za-kafice.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta property="og:title" content="Google Business profil za kafic — SnowIT">
+    <meta property="og:description" content="Kafic na Google-u za 3 dana. Paket 800 KM (web + GMB). Lokalni klijenti pronalaze vas svaki dan.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://snowit.ba/za-kafice.html">
+    <meta property="og:image" content="https://snowit.ba/og-image.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="variables.css">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-primary); background: var(--color-navy); color: var(--color-text-primary); line-height: 1.6; overflow-x: hidden; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255, 107, 53, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 107, 53, 0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+        nav { position: fixed; top: 0; left: 0; right: 0; padding: 1.25rem 3rem; display: flex; justify-content: space-between; align-items: center; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--color-border); z-index: 100; }
+        .logo { font-family: var(--font-primary); font-size: 1.5rem; font-weight: 700; color: var(--color-text-primary); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+        .logo-img { width: 36px; height: 36px; border-radius: 8px; object-fit: cover; }
+        .logo span { color: var(--color-orange); }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--color-text-secondary); text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s ease; }
+        .nav-links a:hover { color: var(--color-orange); }
+        .nav-cta { font-family: var(--font-primary); font-size: 0.875rem; font-weight: 600; padding: 0.75rem 1.5rem; background: var(--color-orange); color: var(--color-navy); border: none; border-radius: 6px; text-decoration: none; transition: all 0.15s ease; text-transform: uppercase; letter-spacing: 0.05em; }
+        .nav-cta:hover { background: var(--color-orange-light); box-shadow: 0 0 30px var(--color-orange-glow); }
+        .hero { min-height: 65vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 9rem 4rem 4rem; max-width: 1200px; margin: 0 auto; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-cyan); margin-bottom: 1.5rem; padding: 0.5rem 1rem; background: rgba(0, 212, 255, 0.1); border: 1px solid rgba(0, 212, 255, 0.3); border-radius: 4px; }
+        .hero-badge::before { content: ''; width: 8px; height: 8px; background: var(--color-cyan); border-radius: 50%; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.5rem; max-width: 800px; }
+        .hero h1 .highlight { color: var(--color-orange); }
+        .hero-subtitle { font-size: 1.125rem; color: var(--color-text-secondary); max-width: 600px; margin-bottom: 2.5rem; }
+        .why { padding: 5rem 4rem; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+        .section-label { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-cyan); display: block; margin-bottom: 1rem; }
+        .why h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 700; margin-bottom: 1.5rem; }
+        .why p { font-size: 1.0625rem; color: var(--color-text-secondary); max-width: 680px; line-height: 1.75; }
+        .proof { padding: 4rem; background: var(--color-navy-deep); position: relative; z-index: 1; }
+        .proof-inner { max-width: 1200px; margin: 0 auto; }
+        .proof h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 700; margin-bottom: 2.5rem; text-align: center; }
+        .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .proof-card { background: var(--color-navy); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; }
+        .proof-card.without { border-color: #EF4444; }
+        .proof-card.with { border-color: var(--color-orange); }
+        .proof-card-label { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; padding: 0.25rem 0.75rem; border-radius: 4px; display: inline-block; }
+        .proof-card.without .proof-card-label { color: #EF4444; background: rgba(239,68,68,0.1); }
+        .proof-card.with .proof-card-label { color: var(--color-orange); background: var(--color-orange-subtle); }
+        /* TODO: slika — screenshot Google Maps kafic pretraga */
+        .proof-placeholder { width: 100%; height: 180px; background: var(--color-navy-light); border: 1px dashed var(--color-border); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--color-text-muted); font-family: var(--font-mono); font-size: 0.75rem; text-align: center; padding: 1rem; }
+        .proof-card-text { margin-top: 1rem; font-size: 0.9375rem; color: var(--color-text-secondary); }
+        .pricing { padding: 5rem 4rem; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+        .pricing h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 700; margin-bottom: 0.75rem; text-align: center; }
+        .pricing-sub { text-align: center; color: var(--color-text-secondary); margin-bottom: 3rem; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .pricing-card { background: var(--color-navy-light); border: 1px solid var(--color-border); border-radius: 12px; padding: 2rem; transition: all 0.2s ease; }
+        .pricing-card:hover { transform: translateY(-6px); border-color: var(--color-orange); }
+        .pricing-card.featured { border-color: var(--color-orange); box-shadow: 0 0 40px var(--color-orange-glow); }
+        .pricing-card.featured::before { content: ''; display: block; height: 4px; background: linear-gradient(90deg, var(--color-orange), var(--color-cyan)); border-radius: 12px 12px 0 0; margin: -2rem -2rem 1.5rem -2rem; }
+        .pkg-name { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .pkg-price { font-family: var(--font-mono); font-size: 2.25rem; font-weight: 700; color: var(--color-orange); margin-bottom: 0.25rem; }
+        .pkg-period { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--color-text-muted); margin-bottom: 1.25rem; }
+        .pkg-desc { font-size: 0.9375rem; color: var(--color-text-secondary); margin-bottom: 1.5rem; }
+        .pkg-features { list-style: none; padding: 0; }
+        .pkg-features li { font-size: 0.9375rem; color: var(--color-text-secondary); margin-bottom: 0.6rem; padding-left: 1.5rem; position: relative; }
+        .pkg-features li::before { content: '✓'; position: absolute; left: 0; color: var(--color-orange); font-weight: 700; }
+        .wa-cta { padding: 5rem 4rem; background: var(--color-navy-deep); text-align: center; position: relative; z-index: 1; }
+        .wa-cta h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 700; margin-bottom: 1rem; }
+        .wa-cta p { color: var(--color-text-secondary); max-width: 500px; margin: 0 auto 2.5rem; }
+        .wa-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: #25D366; color: #fff; font-size: 1.25rem; font-weight: 700; padding: 1.25rem 2.5rem; border-radius: 8px; text-decoration: none; letter-spacing: 0.02em; transition: all 0.15s ease; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3); }
+        .wa-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4); }
+        .wa-btn svg { width: 28px; height: 28px; fill: #fff; }
+        .wa-number { display: block; margin-top: 1rem; font-family: var(--font-mono); font-size: 1rem; color: var(--color-text-muted); }
+        .footer { padding: 3rem 4rem; background: var(--color-navy-deep); border-top: 1px solid var(--color-border); }
+        .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 3rem; flex-wrap: wrap; }
+        .footer-brand .logo { margin-bottom: 0.75rem; display: inline-flex; }
+        .footer-tagline { color: var(--color-text-muted); font-size: 0.9375rem; max-width: 340px; }
+        .footer-links-col h4 { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-primary); margin-bottom: 1rem; }
+        .footer-links-col ul { list-style: none; padding: 0; }
+        .footer-links-col li { margin-bottom: 0.6rem; }
+        .footer-links-col a { color: var(--color-text-muted); text-decoration: none; font-size: 0.9375rem; transition: color 0.2s ease; }
+        .footer-links-col a:hover { color: var(--color-orange); }
+        .footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid var(--color-border); color: var(--color-text-muted); font-size: 0.875rem; }
+        @media (max-width: 768px) { nav { padding: 1rem 1.5rem; } .hero { padding: 8rem 1.5rem 3rem; } .why, .pricing, .wa-cta { padding: 3rem 1.5rem; } .proof { padding: 3rem 1.5rem; } .proof-grid, .pricing-grid { grid-template-columns: 1fr; } .footer { padding: 2.5rem 1.5rem; } .footer-inner { flex-direction: column; gap: 2rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><img src="logo-512.png" alt="SnowIT" class="logo-img">Snow<span>IT</span></a>
+        <ul class="nav-links">
+            <li><a href="usluge.html">Usluge</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="index.html#contact">Kontakt</a></li>
+        </ul>
+        <a href="https://wa.me/38762329076" class="nav-cta">WhatsApp</a>
+    </nav>
+
+    <section class="hero">
+        <span class="hero-badge">Za kafice</span>
+        <h1>Kafic na Google-u<br><span class="highlight">za 3 dana.</span></h1>
+        <p class="hero-subtitle">Paket 800 KM — web stranica + Google Business profil. Lokalni klijenti pronalaze vas svaki dan, bez ulaganja u reklame.</p>
+        <a href="https://wa.me/38762329076" class="btn btn-primary" style="font-size:1.0625rem;padding:1.1rem 2.2rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;">Kontaktirajte Asmira &rarr;</a>
+    </section>
+
+    <section class="why">
+        <span class="section-label">Zašto to važno</span>
+        <h2>Klijenti biraju kafic na Google Maps-u</h2>
+        <p>Turistima, poslovnim putnicima i lokalcima koji traže novi kafic prva stanica je Google Maps. Traže "kafic blizu mene", gledaju fotografije, radno vrijeme i ocjene. Kafic koji nema Google Business profil — ili ima zastarjele podatke — gubi te klijente svaki dan. Investicija od 800 KM (web + GMB paket) vam donosi stalnu vidljivost bez mjesecnih troskova za reklame.</p>
+    </section>
+
+    <section class="proof">
+        <div class="proof-inner">
+            <h2>Kafici na Google-u vs. bez profila</h2>
+            <div class="proof-grid">
+                <div class="proof-card without">
+                    <span class="proof-card-label">Kafic bez Google profila</span>
+                    <!-- TODO: slika — screenshot Google Maps "kafic [grad]" gdje se kafic ne pojavljuje -->
+                    <div class="proof-placeholder">[ Placeholder: Google Maps pretraga — kafic nije vidljiv ]<br>Dodati pravi screenshot</div>
+                    <p class="proof-card-text">Kafic postoji i ima stalne goste ali online ga nema. Novi klijenti, turisti i prolaznici ne znaju za njega.</p>
+                </div>
+                <div class="proof-card with">
+                    <span class="proof-card-label">Sa Google Business profilom</span>
+                    <!-- TODO: slika — screenshot kafica s GMB profilom, fotografijama i ocjenama -->
+                    <div class="proof-placeholder">[ Placeholder: GMB profil kafica sa fotografijama, menijem i ocjenama ]<br>Dodati pravi screenshot</div>
+                    <p class="proof-card-text">Kafic se pojavljuje u pretrazi s fotografijama enteriora, menijem, radnim vremenom i ocjenama. Novi klijenti dolaze organicki.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <span class="section-label" style="display:block;text-align:center;">Cijene</span>
+        <h2>Paketi za kafice</h2>
+        <p class="pricing-sub">Bez mjesecnih naknada. Jednom plaćate, profil je vas zauvijek.</p>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pkg-name">GMB Starter</div>
+                <div class="pkg-price">200 EUR</div>
+                <div class="pkg-period">Jednokratno &bull; 48 sati</div>
+                <p class="pkg-desc">Google Business profil za vas kafic — vidljivi na Google Maps odmah.</p>
+                <ul class="pkg-features">
+                    <li>Google Business profil setup</li>
+                    <li>Verifikacija lokacije</li>
+                    <li>Radno vrijeme i kontakt</li>
+                    <li>Fotografije kafica</li>
+                    <li>Kategorija i opis</li>
+                </ul>
+            </div>
+            <div class="pricing-card featured">
+                <div class="pkg-name">Web + GMB</div>
+                <div class="pkg-price">800 KM</div>
+                <div class="pkg-period">Jednokratno</div>
+                <p class="pkg-desc">Komplet paket — web stranica vaseg kafica + Google Business profil. Za 3 dana.</p>
+                <ul class="pkg-features">
+                    <li>Sve iz GMB Starter paketa</li>
+                    <li>Profesionalna web stranica</li>
+                    <li>Meni / ponuda</li>
+                    <li>Mobilna optimizacija</li>
+                    <li>Instagram link integracija</li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <div class="pkg-name">Full Digital</div>
+                <div class="pkg-price">1200 KM</div>
+                <div class="pkg-period">Jednokratno</div>
+                <p class="pkg-desc">Premium paket s online rezervacijama, SEO optimizacijom i social media setup-om.</p>
+                <ul class="pkg-features">
+                    <li>Sve iz Web + GMB paketa</li>
+                    <li>Online rezervacije stolova</li>
+                    <li>SEO za lokalne pretrage</li>
+                    <li>Facebook + Instagram setup</li>
+                    <li>1 mjesec podrske</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="wa-cta">
+        <h2>Vas kafic na Google-u za 3 dana</h2>
+        <p>Pisitе Asmiru na WhatsApp. Novi klijenti pronalaze vas kafic od sutra.</p>
+        <a href="https://wa.me/38762329076" class="wa-btn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Pozovi Asmira
+        </a>
+        <span class="wa-number">+387 62 329 076</span>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo"><img src="logo-512.png" alt="SnowIT" class="logo-img">Snow<span>IT</span></a>
+                <p class="footer-tagline">Digitalno prisustvo za lokalne biznise u BiH. Brzo, profesionalno, pristupacno.</p>
+            </div>
+            <div class="footer-links-col">
+                <h4>Za vas biznis</h4>
+                <ul>
+                    <li><a href="za-frizere.html">Za frizere</a></li>
+                    <li><a href="za-autoservise.html">Za autoservise</a></li>
+                    <li><a href="za-pekare.html">Za pekare</a></li>
+                    <li><a href="za-kafice.html">Za kafice</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-col">
+                <h4>Kompanija</h4>
+                <ul>
+                    <li><a href="usluge.html">Sve usluge</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="index.html#contact">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SnowIT. Sva prava zadrzana.</p>
+        </div>
+    </footer>
+</body>
+</html>
