@@ -1139,7 +1139,7 @@
     <div class="glow-orb glow-orb-2"></div>
 
     <nav>
-        <a href="#" class="logo">
+        <a href="/" class="logo">
             <img src="logo-512.png" alt="SnowIT" class="logo-img">
             Snow<span>IT</span>
         </a>
@@ -1495,6 +1495,32 @@
                 }
             });
         }
+
+        // Pre-fill contact form message from ?plan= query param (set by usluge.html pricing CTAs)
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const plan = params.get('plan');
+            if (!plan) return;
+            const planMessages = {
+                'agentna-sigurnost':  'Zainteresovan sam za uslugu Agentna sigurnost (AI threat modeling, prompt injection testiranje, hardening preporuke).',
+                'ai-harness':         'Zainteresovan sam za uslugu AI Harness Engineering (arhitektura agent harnessa, multi-model ruting, orkestracija).',
+                'digital-presence':   'Zainteresovan sam za paket Digital Presence (Google Business + web prisustvo + email setup).',
+                'linkedin-launch':    'Zainteresovan sam za paket LinkedIn Launch (company page setup, banner dizajn, inicijalni content plan).',
+                'full-digital-start': 'Zainteresovan sam za paket Full Digital Start (web + LinkedIn + Google Business — sve u jednom).',
+                'consultation':       'Zainteresovan sam za besplatnu konsultaciju o digitalnoj transformaciji mog biznisa.'
+            };
+            const msg = planMessages[plan];
+            if (!msg) return;
+            const textarea = document.getElementById('message');
+            if (textarea && !textarea.value) {
+                textarea.value = msg;
+            }
+            // Scroll to contact section after page loads
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                setTimeout(() => contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 150);
+            }
+        })();
 
         // Spinner animation
         const spinStyle = document.createElement('style');
