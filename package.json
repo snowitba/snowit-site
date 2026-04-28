@@ -3,5 +3,10 @@
   "type": "module",
   "dependencies": {
     "nodemailer": "^6.10.1"
+  },
+  "devDependencies": {
+    "@vercel/edge": "^1.2.2",
+    "@vercel/node": "^5.7.13",
+    "next": "^16.2.4"
   }
 }

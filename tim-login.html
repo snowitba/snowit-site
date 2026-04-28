@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnowIT — Interno</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="variables.css">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--color-navy);
+            color: var(--color-text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: var(--space-4);
+        }
+
+        .login-card {
+            background: var(--color-navy-light);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-10);
+            width: 100%;
+            max-width: 400px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .login-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            margin-bottom: var(--space-8);
+        }
+
+        .login-logo img {
+            width: 36px;
+            height: 36px;
+        }
+
+        .login-logo-text {
+            font-family: var(--font-mono);
+            font-size: var(--text-lg);
+            font-weight: var(--weight-bold);
+            color: var(--color-text-primary);
+            letter-spacing: var(--tracking-tight);
+        }
+
+        .login-logo-text span {
+            color: var(--color-orange);
+        }
+
+        .login-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            font-weight: var(--weight-medium);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wider);
+            color: var(--color-orange);
+            background: var(--color-orange-subtle);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            border-radius: var(--radius-sm);
+            padding: var(--space-1) var(--space-3);
+            margin-bottom: var(--space-5);
+        }
+
+        .login-title {
+            font-size: var(--text-2xl);
+            font-weight: var(--weight-bold);
+            color: var(--color-text-primary);
+            letter-spacing: var(--tracking-tight);
+            margin-bottom: var(--space-2);
+        }
+
+        .login-subtitle {
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-8);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-5);
+        }
+
+        .form-label {
+            display: block;
+            font-size: var(--text-sm);
+            font-weight: var(--weight-medium);
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wide);
+            margin-bottom: var(--space-2);
+        }
+
+        .form-input {
+            width: 100%;
+            font-family: var(--font-mono);
+            font-size: var(--text-base);
+            color: var(--color-text-primary);
+            background: var(--color-navy);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-3) var(--space-4);
+            outline: none;
+            transition: var(--transition-fast);
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .form-input:focus {
+            border-color: var(--color-orange);
+            box-shadow: 0 0 0 3px var(--color-orange-subtle);
+        }
+
+        .form-input::placeholder {
+            color: var(--color-text-muted);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: var(--space-3) var(--space-5);
+            font-family: var(--font-primary);
+            font-size: var(--text-base);
+            font-weight: var(--weight-bold);
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-wide);
+            color: var(--color-navy);
+            background: var(--color-orange);
+            border: 2px solid var(--color-orange);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            margin-top: var(--space-2);
+        }
+
+        .btn-submit:hover {
+            background: transparent;
+            color: var(--color-orange);
+            box-shadow: var(--shadow-orange-glow);
+        }
+
+        .btn-submit:active {
+            background: var(--color-orange-dark);
+            border-color: var(--color-orange-dark);
+            color: var(--color-navy);
+            box-shadow: none;
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .error-msg {
+            display: none;
+            margin-top: var(--space-4);
+            padding: var(--space-3) var(--space-4);
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: var(--radius-md);
+            font-size: var(--text-sm);
+            color: var(--color-error);
+            text-align: center;
+        }
+
+        .error-msg.visible {
+            display: block;
+        }
+
+        .login-footer {
+            margin-top: var(--space-6);
+            text-align: center;
+            font-size: var(--text-xs);
+            color: var(--color-text-muted);
+            font-family: var(--font-mono);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="login-logo">
+            <img src="logo-icon.svg" alt="SnowIT">
+            <span class="login-logo-text">Snow<span>IT</span></span>
+        </div>
+
+        <span class="login-badge">Interno</span>
+
+        <h1 class="login-title">SnowIT — Interno</h1>
+        <p class="login-subtitle">Pristup zaštićen lozinkom.</p>
+
+        <form id="loginForm" method="POST" action="/api/tim-login">
+            <div class="form-group">
+                <label class="form-label" for="password">Lozinka:</label>
+                <input
+                    class="form-input"
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="••••••••••••"
+                    autocomplete="current-password"
+                    required
+                    autofocus
+                >
+            </div>
+
+            <button class="btn-submit" type="submit" id="submitBtn">Otvori</button>
+
+            <div class="error-msg" id="errorMsg">Pogrešna lozinka. Pokušaj ponovo.</div>
+        </form>
+
+        <p class="login-footer">snowit.ba &mdash; interno</p>
+    </div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        const btn = document.getElementById('submitBtn');
+        const errorMsg = document.getElementById('errorMsg');
+
+        // Show error if URL has ?error=1 (redirect back from 401)
+        if (new URLSearchParams(window.location.search).get('error') === '1') {
+            errorMsg.classList.add('visible');
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            errorMsg.classList.remove('visible');
+            btn.disabled = true;
+            btn.textContent = '...';
+
+            const formData = new FormData(form);
+            const body = new URLSearchParams(formData).toString();
+
+            fetch('/api/tim-login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: body,
+                redirect: 'manual',
+            })
+            .then(function(res) {
+                if (res.status === 302 || res.type === 'opaqueredirect') {
+                    // Success — follow the redirect manually
+                    window.location.href = '/tim.html';
+                } else if (res.status === 200) {
+                    // Also treat 200 with cookie set as success
+                    window.location.href = '/tim.html';
+                } else {
+                    errorMsg.classList.add('visible');
+                    btn.disabled = false;
+                    btn.textContent = 'Otvori';
+                }
+            })
+            .catch(function() {
+                // Network error — fall back to native form submit
+                form.submit();
+            });
+        });
+    </script>
+</body>
+</html>
