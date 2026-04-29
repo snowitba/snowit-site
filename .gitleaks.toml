@@ -1,0 +1,26 @@
+# ALAI Holding AS — gitleaks configuration
+# Extends gitleaks default ruleset; add ALAI-specific allowlist entries below.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "ALAI global allowlist — false positives"
+regexTarget = "line"
+# Test/fixture files that intentionally contain dummy secrets
+paths = [
+  '''(?i)(test|spec|fixture|mock|example|sample|\.env\.example|\.env\.template)''',
+  '''(?i)(\.test\.(ts|js|tsx|jsx))$''',
+]
+# Common false-positive patterns in ALAI codebases
+regexes = [
+  # Placeholder tokens used in templates
+  '''(?i)(YOUR_API_KEY|INSERT_KEY_HERE|REPLACE_ME|<YOUR_|<API_KEY>|example_key|dummy_key|fake_key|test_key|sample_key)''',
+  # AWS example ARNs in docs
+  '''arn:aws:iam::123456789012''',
+  # Generic base64 that matches secret patterns but is actually a JWT example
+  '''eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ''',
+]
+
+[allowlist.commits]
+# Add specific commit SHAs here if baseline scan finds known-historical commits
+# sha = "abc123def456"
